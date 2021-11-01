@@ -1,0 +1,2 @@
+rootProject.name = "Project_Mobile_VCare"
+include ':app'
