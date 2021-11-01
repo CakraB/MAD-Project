@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40dp"
+    android:gravity="center"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="@color/darkBlue"
+        android:textSize="32sp"
+        android:fontFamily="@font/poppinssemibold"/>
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:padding="16dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/poppinsreguler"/>
+
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:padding="16dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/poppinsreguler"/>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/happyYellow"
+        android:fontFamily="@font/poppinssemibold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="4dp"
+            android:text="Don't have an account yet?"
+            android:fontFamily="@font/poppinsreguler"/>
+
+        <TextView
+            android:id="@+id/text_register_here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register here"
+            android:textColor="@color/happyYellow"
+            android:fontFamily="@font/poppinssemibold"/>
+
+    </LinearLayout>
+
+</LinearLayout>
