@@ -10,12 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Mobile_VCare">
         <activity android:name=".HomeActivity"></activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".RegisterActivity" android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar"/>
+        <activity android:name=".LoginActivity" android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar"/>
+        <activity android:name=".MainActivity" android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

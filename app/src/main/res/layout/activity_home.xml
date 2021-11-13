@@ -5,19 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="40dp"
-    android:gravity="center"
     tools:context=".HomeActivity">
 
     <TextView
         android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="Homepage"
+        android:text="News"
+        android:paddingTop="16dp"
         android:textColor="@color/darkBlue"
-        android:textSize="32sp"
+        android:textSize="24sp"
         android:fontFamily="@font/poppinssemibold"/>
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rvCategories"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <TextView
+        android:id="@+id/text_content_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="View More"
+        android:paddingTop="16dp"
+        android:textColor="@color/darkBlue"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppinssemibold"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
 </LinearLayout>
