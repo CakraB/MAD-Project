@@ -53,7 +53,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 2;
+        return newsArrayLists.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
