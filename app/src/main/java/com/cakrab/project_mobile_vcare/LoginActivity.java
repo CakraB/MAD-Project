@@ -43,37 +43,37 @@ public class LoginActivity extends AppCompatActivity {
                 String getEmail = editEmail.getText().toString();
                 String getPassword = editPassword.getText().toString();
                 // Validate Email
-                try {
-                    // Input Email is Empty
-                    if (getEmail.trim().isEmpty()) {
-                        Toast.makeText(LoginActivity.this, "Email must be filled",Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    // Input Email is not Registered
-                    else if (!userList.contains(getEmail)) {
-                        Toast.makeText(LoginActivity.this, "Your Email is not Registered",Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
-                }
-                // Validate Password
-                try {
-                    // Input Email is Empty
-                    if (getPassword.trim().isEmpty()) {
-                        Toast.makeText(LoginActivity.this, "Password must be filled",Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    // Input Email is not Registered
-                    else if (!userList.contains(getPassword)) {
-                        Toast.makeText(LoginActivity.this, "Your Password is Incorrect",Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
-                }
+//                try {
+//                    // Input Email is Empty
+//                    if (getEmail.trim().isEmpty()) {
+//                        Toast.makeText(LoginActivity.this, "Email must be filled",Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
+//                    // Input Email is not Registered
+//                    else if (!userList.contains(getEmail)) {
+//                        Toast.makeText(LoginActivity.this, "Your Email is not Registered",Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                    Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
+//                }
+//                // Validate Password
+//                try {
+//                    // Input Email is Empty
+//                    if (getPassword.trim().isEmpty()) {
+//                        Toast.makeText(LoginActivity.this, "Password must be filled",Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
+//                    // Input Email is not Registered
+//                    else if (!userList.contains(getPassword)) {
+//                        Toast.makeText(LoginActivity.this, "Your Password is Incorrect",Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                    Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
+//                }
                 // Validate Success and Redirect to Home
                 Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                 startActivity(i);
