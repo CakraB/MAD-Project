@@ -6,6 +6,8 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,9 +19,6 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private RecyclerView rvArticles;
-    private ArrayList<News> newsArrayList;
-    private NewsAdapter newsAdapter;
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -30,49 +29,30 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-        rvArticles = findViewById(R.id.rvContent);
-        newsArrayList = new ArrayList<>();
-        newsAdapter = new NewsAdapter(newsArrayList, this);
-        rvArticles.setLayoutManager(new LinearLayoutManager(this));
-        rvArticles.setAdapter(newsAdapter);
-
-        newsArrayList.add(new News(
-                "Mobil",
-                "Mobil bla bla bla",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
-                "Motor",
-                "Motor bla bla bla",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
-                "Mobil",
-                "Mobil bla bla bla",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
-                "Motor",
-                "Motor bla bla bla",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
-                "Mobil",
-                "Mobil bla bla bla",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
-                "Motor",
-                "Motor bla bla bla",
-                "10/11/2021"
-        ));
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new HomeFragment()).commit();
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener = new
             BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
+                    Fragment selectedFragment = null;
                     int navId = item.getItemId();
+                    if (navId == R.id.nav_home) {
+                        selectedFragment = new HomeFragment();
+                    }
+                    if (navId == R.id.nav_news) {
+                        selectedFragment = new NewsFragment();
+                    }
+                    if (navId == R.id.nav_garage) {
+                        selectedFragment = new HomeFragment();
+                    }
+                    if (navId == R.id.nav_profile) {
+                        selectedFragment = new HomeFragment();
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
 
                     return true;
                 }

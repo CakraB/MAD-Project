@@ -42,7 +42,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, HomeActivity.class);
+                Intent i = new Intent(context, NewsFragment.class);
                 i.putExtra("NAME", news.getArticleName());
                 i.putExtra("DESC", news.getArticleDesc());
                 i.putExtra("DATE", news.getArticleDate());

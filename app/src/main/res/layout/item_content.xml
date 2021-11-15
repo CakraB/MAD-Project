@@ -12,16 +12,17 @@
 
         <ImageView
             android:id="@+id/image_content"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_launcher_background" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@id/image_content"
+            android:padding="16dp"
+            android:layout_below="@id/image_content"
             android:orientation="vertical">
 
             <TextView
@@ -30,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinssemibold"
                 android:text="Judul Berita"
-                android:textSize="24dp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/text_content_desc"
@@ -38,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsreguler"
                 android:text="Isi Berita"
-                android:textSize="20dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/text_content_date"
