@@ -3,18 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_garage.xml" value="0.13333333333333333" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_home.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.15942028985507245" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_news.xml" value="0.15942028985507245" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_register.xml" value="0.15942028985507245" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/fragment_home.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/fragment_news.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/item_content.xml" value="0.15942028985507245" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_editprofile.xml" value="0.121875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_home.xml" value="0.176" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_login.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_news.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_profile.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/fragment_home.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/fragment_news.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/item_content.xml" value="0.13020833333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
