@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="Profile"
+        android:text="Edit Profile"
         android:textColor="@color/darkBlue"
         android:textSize="32sp"
         android:fontFamily="@font/poppinssemibold"/>
@@ -67,6 +67,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/happyYellow"
-        android:text="Edit Profile" />
+        android:text="Save" />
 
 </LinearLayout>
