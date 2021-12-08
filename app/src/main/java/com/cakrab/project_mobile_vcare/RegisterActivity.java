@@ -4,25 +4,37 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cakrab.project_mobile_vcare.Database.UserHelper;
+
 public class RegisterActivity extends AppCompatActivity {
+
+    EditText editName;
+    EditText editEmail;
+    EditText editPassword;
+    EditText editPasswordCon;
+    Button buttonRegister;
+    TextView textLoginHere;
+    UserHelper dbUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         // Initialize Variable
-        EditText editName = findViewById(R.id.edit_name);
-        EditText editEmail = findViewById(R.id.edit_email);
-        EditText editPassword = findViewById(R.id.edit_password);
-        EditText editPasswordCon = findViewById(R.id.edit_password_confirm);
-        Button buttonRegister = findViewById(R.id.button_register);
-        TextView textLoginHere = findViewById(R.id.text_login_here);
+        editName = findViewById(R.id.edit_name);
+        editEmail = findViewById(R.id.edit_email);
+        editPassword = findViewById(R.id.edit_password);
+        editPasswordCon = findViewById(R.id.edit_password_confirm);
+        buttonRegister = findViewById(R.id.button_register);
+        textLoginHere = findViewById(R.id.text_login_here);
+        dbUser = new UserHelper(getApplicationContext());
         // Button OnClick
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,11 +94,19 @@ public class RegisterActivity extends AppCompatActivity {
                     e.printStackTrace();
                     Toast.makeText(RegisterActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
                 }
+                // Insert New User to User Table
+                if (dbUser.createUser(getName, getEmail, getPassword)) {
+                    Toast.makeText(RegisterActivity.this, "User Register Success", Toast.LENGTH_SHORT).show();
+                    Intent register = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(register);
+                } else {
+                    Toast.makeText(RegisterActivity.this, "User Register Failed", Toast.LENGTH_SHORT).show();
+                }
                 // Validate Success and Redirect to Login
-                Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
-                i.putExtra("EMAIL", getEmail);
-                i.putExtra("PASSWORD", getPassword);
-                startActivity(i);
+//                Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+//                i.putExtra("EMAIL", getEmail);
+//                i.putExtra("PASSWORD", getPassword);
+//                startActivity(i);
                 // Reset All Data on Input Fields
                 editName.setText("");
                 editEmail.setText("");
