@@ -12,20 +12,20 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:background="@color/darkBlue"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/text_welcome"
-            android:layout_width="310dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppinssemibold"
-            android:text="Welcome"
+            android:fontFamily="@font/poppinsreguler"
+            android:text="Welcome, "
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/text_username"
-            android:layout_width="310dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinssemibold"
             android:text="Administrator"
