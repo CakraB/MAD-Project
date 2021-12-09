@@ -69,4 +69,12 @@
         android:backgroundTint="@color/happyYellow"
         android:text="Edit Profile" />
 
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="Log out" />
+
 </LinearLayout>
