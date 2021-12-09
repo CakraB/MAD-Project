@@ -39,10 +39,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.textDesc.setText(news.getArticleDesc());
         holder.textDate.setText(news.getArticleDate());
         holder.imageView.setImageResource(R.drawable.ic_launcher_background);
+
+        // Click Detail Page
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, NewsFragment.class);
+                Intent i = new Intent(context, DetailNewsActivity.class);
                 i.putExtra("NAME", news.getArticleName());
                 i.putExtra("DESC", news.getArticleDesc());
                 i.putExtra("DATE", news.getArticleDate());
