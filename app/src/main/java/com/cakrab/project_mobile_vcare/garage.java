@@ -1,14 +1,20 @@
 package com.cakrab.project_mobile_vcare;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class garage {
+    private String garageName;
+    private String garageCabang;
 
-import android.os.Bundle;
-
-public class garage extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_garage);
+    public garage(String garageName, String garageCabang){
+        this.garageName = garageName;
+        this.garageCabang = garageCabang;
     }
+
+    public String getGarageName(){
+        return garageName;
+    }
+
+    public String getGarageCabang(){
+        return garageCabang;
+    }
+
 }
