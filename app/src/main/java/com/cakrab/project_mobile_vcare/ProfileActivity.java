@@ -7,8 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Profile extends AppCompatActivity {
-
+public class ProfileActivity extends AppCompatActivity {
     Button btnEditProfile;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +19,10 @@ public class Profile extends AppCompatActivity {
         btnEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Profile.this, EditProfile.class );
+                Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class );
                 startActivity(intent);
             }
         });
     }
+
 }
