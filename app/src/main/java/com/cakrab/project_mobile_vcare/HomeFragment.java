@@ -51,14 +51,14 @@ public class HomeFragment extends Fragment {
         rvNews.setAdapter(newsAdapter);
 
         newsArrayList.add(new News(
-                "Mobil",
-                "Mobil bla bla bla",
+                "Mobil Besar Namanya",
+                "Mobil banyak digunakan di jalanan besar dan ramai penduduk",
                 "10/11/2021"
         ));
         newsArrayList.add(new News(
-                "Motor",
-                "Motor bla bla bla",
-                "10/11/2021"
+                "Motor Cepat Sekali",
+                "Motor banyak digunakan di daerah perkampungan untuk menjangkau daerah yang sulit",
+                "11/11/2021"
         ));
     }
 
