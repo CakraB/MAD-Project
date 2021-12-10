@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Mobile_VCare">
         <activity
+            android:name=".DetailNewsActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity
             android:name=".garage"
             android:exported="false" />
         <activity

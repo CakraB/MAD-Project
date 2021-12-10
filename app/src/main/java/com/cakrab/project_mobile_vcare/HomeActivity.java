@@ -49,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
                         selectedFragment = new HomeFragment();
                     }
                     if (navId == R.id.nav_profile) {
-                        selectedFragment = new HomeFragment();
+                        selectedFragment = new ProfileFragment();
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             selectedFragment).commit();

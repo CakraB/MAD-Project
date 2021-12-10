@@ -10,22 +10,22 @@
         android:id="@+id/container_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:background="@color/darkBlue"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/text_welcome"
-            android:layout_width="310dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppinssemibold"
-            android:text="Welcome"
+            android:fontFamily="@font/poppinsreguler"
+            android:text="Welcome, "
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/text_username"
-            android:layout_width="310dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinssemibold"
             android:text="Administrator"
@@ -36,9 +36,9 @@
 
     <LinearLayout
         android:id="@+id/container_news"
-        android:layout_below="@+id/container_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/container_welcome"
         android:orientation="vertical">
 
         <LinearLayout
@@ -50,19 +50,22 @@
 
             <TextView
                 android:id="@+id/text_title_news"
-                android:layout_width="310dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="9"
                 android:fontFamily="@font/poppinssemibold"
                 android:text="Hot News"
                 android:textColor="@color/darkBlue"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/text_view_news"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:fontFamily="@font/poppinsreguler"
                 android:text="View All"
+                android:textAlignment="textEnd"
                 android:textColor="@color/darkBlue"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -72,6 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:padding="8dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
             tools:listitem="@layout/item_content" />
@@ -93,17 +97,19 @@
 
             <TextView
                 android:id="@+id/text_title_garage"
-                android:layout_width="310dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="9"
                 android:fontFamily="@font/poppinssemibold"
                 android:text="Garage"
                 android:textColor="@color/darkBlue"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/text_view_garage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:fontFamily="@font/poppinsreguler"
                 android:text="View All"
                 android:textColor="@color/darkBlue"
@@ -115,6 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:padding="8dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
             tools:listitem="@layout/item_content" />
