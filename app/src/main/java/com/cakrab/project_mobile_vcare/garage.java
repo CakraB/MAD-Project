@@ -13,8 +13,16 @@ public class garage {
         return garageName;
     }
 
+    public void setGarageName(String garageName) {
+        this.garageName = garageName;
+    }
+
     public String getGarageCabang(){
         return garageCabang;
+    }
+
+    public void setGarageCabang(String garageCabang) {
+        this.garageCabang = garageCabang;
     }
 
 }
