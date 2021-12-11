@@ -1,6 +1,5 @@
 package com.cakrab.project_mobile_vcare;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +23,9 @@ public class HomeFragment extends Fragment {
     RecyclerView rvNews;
     RecyclerView rvGarage;
     ArrayList<News> newsArrayList;
+    ArrayList<Garage> garageArrayList;
     NewsAdapter newsAdapter;
+    GarageAdapter garageAdapter;
     TextView textViewNews, textViewGarage;
 
     @Nullable
@@ -59,6 +60,20 @@ public class HomeFragment extends Fragment {
                 "Motor Cepat Sekali",
                 "Motor banyak digunakan di daerah perkampungan untuk menjangkau daerah yang sulit",
                 "11/11/2021"
+        ));
+
+        garageArrayList = new ArrayList<>();
+        garageAdapter = new GarageAdapter(garageArrayList, getContext());
+        rvGarage.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        rvGarage.setAdapter(garageAdapter);
+
+        garageArrayList.add(new Garage(
+                "Suzuki",
+                "20 Cabang"
+        ));
+        garageArrayList.add(new Garage(
+                "Honda",
+                "15 Cabang"
         ));
     }
 

@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Mobile_VCare">
         <activity
-            android:name=".DetailNewsActivity"
+            android:name=".DetailGarageActivity"
             android:parentActivityName=".HomeActivity" />
         <activity
-            android:name=".garage"
-            android:exported="false" />
+            android:name=".DetailNewsActivity"
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".HomeActivity"
             android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />

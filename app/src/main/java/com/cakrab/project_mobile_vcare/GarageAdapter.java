@@ -16,24 +16,24 @@ import java.util.ArrayList;
 
 public class GarageAdapter extends RecyclerView.Adapter<GarageAdapter.GarageViewHolder> {
 
-    private ArrayList <garage> garageArrayList;
+    private ArrayList <Garage> garageArrayList;
     private Context context;
 
-    public GarageAdapter(ArrayList<garage> garages, Context context){
-        this.garageArrayList = garages;
+    public GarageAdapter(ArrayList<Garage> garage, Context context){
+        this.garageArrayList = garage;
         this.context = context;
     }
 
     @NonNull
     @Override
     public GarageAdapter.GarageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_content, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_garage, parent, false);
         return new GarageAdapter.GarageViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull GarageViewHolder holder, int position) {
-        garage garage = garageArrayList.get(position);
+        Garage garage = garageArrayList.get(position);
         holder.garageName.setText(garage.getGarageName());
         holder.garageCabang.setText(garage.getGarageCabang());
         holder.garageImage.setImageResource(R.drawable.ic_launcher_background);
@@ -65,7 +65,6 @@ public class GarageAdapter extends RecyclerView.Adapter<GarageAdapter.GarageView
             garageName = itemView.findViewById(R.id.text_garage_name);
             garageCabang = itemView.findViewById(R.id.text_garage_cabang);
             garageImage = itemView.findViewById(R.id.image_garage);
-
         }
     }
 }

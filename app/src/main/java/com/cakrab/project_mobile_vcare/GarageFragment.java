@@ -17,8 +17,8 @@ import java.util.ArrayList;
 
 public class GarageFragment extends Fragment {
 
-    RecyclerView rvGarages;
-    ArrayList<garage> garageArrayList;
+    RecyclerView rvGarage;
+    ArrayList<Garage> garageArrayList;
     GarageAdapter garageAdapter;
 
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
@@ -29,37 +29,37 @@ public class GarageFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rvGarages = view.findViewById(R.id.rvGarage);
+        rvGarage = view.findViewById(R.id.rvGarage);
         garageArrayList = new ArrayList<>();
         garageAdapter = new GarageAdapter(garageArrayList, getContext());
-        rvGarages.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        rvGarages.setAdapter(garageAdapter);
+        rvGarage.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        rvGarage.setAdapter(garageAdapter);
 
-        garageArrayList.add(new garage(
+        garageArrayList.add(new Garage(
                 "Suzuki",
                 "20 Cabang"
         ));
-        garageArrayList.add(new garage(
+        garageArrayList.add(new Garage(
                 "Honda",
                 "15 Cabang"
         ));
-        garageArrayList.add(new garage(
+        garageArrayList.add(new Garage(
                 "Kawasaki",
                 "23 Cabang"
         ));
-        garageArrayList.add(new garage(
+        garageArrayList.add(new Garage(
                 "Bengkel Abadi",
                 "20 Cabang"
         ));
-        garageArrayList.add(new garage(
+        garageArrayList.add(new Garage(
                 "Toyota",
                 "54 Cabang"
         ));
-        garageArrayList.add(new garage(
+        garageArrayList.add(new Garage(
                 "Bengkel Indah",
                 "2 Cabang"
         ));
-        garageArrayList.add(new garage(
+        garageArrayList.add(new Garage(
                 "Lexus",
                 "3 Cabang"
         ));
