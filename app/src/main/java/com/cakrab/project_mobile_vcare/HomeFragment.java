@@ -1,5 +1,7 @@
 package com.cakrab.project_mobile_vcare;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,9 +22,12 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
+    TextView textEmail;
     RecyclerView rvNews;
     ArrayList<News> newsArrayList;
     NewsAdapter newsAdapter;
+    SharedPreferences sharedPreferences;
+    boolean isRemember = false;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -36,6 +41,14 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         rvNews = view.findViewById(R.id.rvNews);
+        textEmail = view.findViewById(R.id.text_email);
+
+        sharedPreferences = this.getActivity().getSharedPreferences("REMEMBER", Context.MODE_PRIVATE);
+        isRemember = sharedPreferences.getBoolean("CHECKBOX",false);
+
+        String getData = sharedPreferences.getString("EMAIL", "");
+        textEmail.setText(getData);
+
         newsArrayList = new ArrayList<>();
         newsAdapter = new NewsAdapter(newsArrayList, getContext());
         rvNews.setLayoutManager(new GridLayoutManager(getContext(), 1));

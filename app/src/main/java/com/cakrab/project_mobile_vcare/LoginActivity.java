@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,8 +21,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText editEmail;
     EditText editPassword;
     Button buttonLogin;
+    CheckBox checkRemember;
     TextView textRegisterHere;
     UserHelper dbUser;
+    boolean isRemember = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,20 +34,19 @@ public class LoginActivity extends AppCompatActivity {
         editEmail = findViewById(R.id.edit_email);
         editPassword = findViewById(R.id.edit_password);
         buttonLogin = findViewById(R.id.button_login);
+        checkRemember = findViewById(R.id.check_remember);
         textRegisterHere = findViewById(R.id.text_register_here);
         dbUser = new UserHelper(getApplicationContext());
-        // Save Temporary
-        ArrayList<String> userList = new ArrayList<String>();
-        // Hard Code Account
-        userList.add("admin@admin.com");
-        userList.add("admin123");
-        // Get Data Register
-        Intent getData = getIntent();
-        String getEmailData = getData.getStringExtra("EMAIL");
-        String getPasswordData = getData.getStringExtra("PASSWORD");
-        // Save Data Register to Array
-        userList.add(getEmailData);
-        userList.add(getPasswordData);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("REMEMBER", MODE_PRIVATE);
+        isRemember = sharedPreferences.getBoolean("CHECKBOX", false);
+
+        if (isRemember) {
+            Intent login = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(login);
+            finish();
+        }
+
         // Button OnClick
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 // Get Input Value
                 String getEmail = editEmail.getText().toString();
                 String getPassword = editPassword.getText().toString();
+                boolean rememberMe = checkRemember.isChecked();
                 // Validate Email
                 try {
                     // Input Email is Empty
@@ -59,11 +62,11 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Email must be filled",Toast.LENGTH_SHORT).show();
                         return;
                     }
-//                    // Input Email is not Registered
-//                    else if (!userList.contains(getEmail)) {
-//                        Toast.makeText(LoginActivity.this, "Your Email is not Registered",Toast.LENGTH_SHORT).show();
-//                        return;
-//                    }
+                   // Input Email is Format
+                    else if (!getEmail.contains("@") || !getEmail.endsWith(".com")) {
+                        Toast.makeText(LoginActivity.this, "Email is invalid format", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
@@ -75,26 +78,29 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Password must be filled",Toast.LENGTH_SHORT).show();
                         return;
                     }
-//                    // Input Email is not Registered
-//                    else if (!userList.contains(getPassword)) {
-//                        Toast.makeText(LoginActivity.this, "Your Password is Incorrect",Toast.LENGTH_SHORT).show();
-//                        return;
-//                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
                 }
                 // Check user credential
                 if (dbUser.readUser(getEmail, getPassword)) {
+                    // Validate Remember Me Checkbox
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("EMAIL", getEmail);
+                    editor.putString("PASSWORD", getPassword);
+                    editor.putBoolean("CHECKBOX", rememberMe);
+                    editor.apply();
+
+                    if (rememberMe) {
+                        Toast.makeText(LoginActivity.this, "Credential is saved", Toast.LENGTH_SHORT).show();
+                    }
+
                     Intent login = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(login);
                     finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "User is not Exist", Toast.LENGTH_SHORT).show();
                 }
-                // Validate Success and Redirect to Home
-//                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-//                startActivity(i);
                 // Reset All Data on Input Fields
                 editEmail.setText("");
                 editPassword.setText("");
