@@ -42,8 +42,8 @@ public class HomeActivity extends AppCompatActivity {
                     if (navId == R.id.nav_home) {
                         selectedFragment = new HomeFragment();
                     }
-                    if (navId == R.id.nav_news) {
-                        selectedFragment = new NewsFragment();
+                    if (navId == R.id.nav_forum) {
+                        selectedFragment = new ForumFragment();
                     }
                     if (navId == R.id.nav_garage) {
                         selectedFragment = new GarageFragment();

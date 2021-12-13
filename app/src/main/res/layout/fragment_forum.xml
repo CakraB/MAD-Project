@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinssemibold"
             android:gravity="center"
-            android:text="News"
+            android:text="Forum"
             android:textColor="@color/darkBlue"
             android:textSize="24sp" />
 
@@ -32,7 +32,7 @@
         android:layout_below="@id/header_news"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
+        app:spanCount="1"
         tools:listitem="@layout/item_news" />
 
 </RelativeLayout>

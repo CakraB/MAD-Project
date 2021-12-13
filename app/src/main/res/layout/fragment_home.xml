@@ -10,7 +10,6 @@
         android:id="@+id/container_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/happyYellow"
         android:orientation="horizontal"
         android:padding="16dp">
 
@@ -41,37 +40,6 @@
         android:layout_below="@+id/container_welcome"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/header_news"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingTop="16dp"
-            android:paddingRight="16dp">
-
-            <TextView
-                android:id="@+id/text_title_news"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="9"
-                android:fontFamily="@font/poppinssemibold"
-                android:text="Hot News"
-                android:textColor="@color/darkBlue"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/text_view_news"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppinsreguler"
-                android:gravity="center"
-                android:text="View All"
-                android:textColor="@color/darkBlue"
-                android:textSize="14sp" />
-        </LinearLayout>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvNews"
             android:layout_width="match_parent"
@@ -79,57 +47,8 @@
             android:orientation="vertical"
             android:padding="8dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
+            app:spanCount="1"
             tools:listitem="@layout/item_news" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/container_garage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/container_news"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/header_garage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingTop="16dp"
-            android:paddingRight="16dp">
-
-            <TextView
-                android:id="@+id/text_title_garage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="9"
-                android:fontFamily="@font/poppinssemibold"
-                android:text="Top Garage "
-                android:textColor="@color/darkBlue"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/text_view_garage"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/poppinsreguler"
-                android:gravity="center"
-                android:text="View All"
-                android:textColor="@color/darkBlue"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvGarage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            tools:listitem="@layout/item_garage" />
 
     </LinearLayout>
 

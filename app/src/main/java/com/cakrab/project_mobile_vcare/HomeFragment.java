@@ -21,12 +21,8 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
 
     RecyclerView rvNews;
-    RecyclerView rvGarage;
     ArrayList<News> newsArrayList;
-    ArrayList<Garage> garageArrayList;
     NewsAdapter newsAdapter;
-    GarageAdapter garageAdapter;
-    TextView textViewNews, textViewGarage;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -39,16 +35,10 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        textViewNews = view.findViewById(R.id.text_view_news);
-        clickViewNews();
-        textViewGarage = view.findViewById(R.id.text_view_garage);
-
         rvNews = view.findViewById(R.id.rvNews);
-        rvGarage = view.findViewById(R.id.rvGarage);
-
         newsArrayList = new ArrayList<>();
         newsAdapter = new NewsAdapter(newsArrayList, getContext());
-        rvNews.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        rvNews.setLayoutManager(new GridLayoutManager(getContext(), 1));
         rvNews.setAdapter(newsAdapter);
 
         newsArrayList.add(new News(
@@ -61,31 +51,15 @@ public class HomeFragment extends Fragment {
                 "Motor banyak digunakan di daerah perkampungan untuk menjangkau daerah yang sulit",
                 "11/11/2021"
         ));
-
-        garageArrayList = new ArrayList<>();
-        garageAdapter = new GarageAdapter(garageArrayList, getContext());
-        rvGarage.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        rvGarage.setAdapter(garageAdapter);
-
-        garageArrayList.add(new Garage(
-                "Suzuki",
-                "20 Cabang"
+        newsArrayList.add(new News(
+                "Mobil Besar Namanya",
+                "Mobil banyak digunakan di jalanan besar dan ramai penduduk",
+                "10/11/2021"
         ));
-        garageArrayList.add(new Garage(
-                "Honda",
-                "15 Cabang"
+        newsArrayList.add(new News(
+                "Motor Cepat Sekali",
+                "Motor banyak digunakan di daerah perkampungan untuk menjangkau daerah yang sulit",
+                "11/11/2021"
         ));
-    }
-
-    private void clickViewNews() {
-        textViewNews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Fragment fragment = new NewsFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, fragment).commit();
-            }
-        });
     }
 }
