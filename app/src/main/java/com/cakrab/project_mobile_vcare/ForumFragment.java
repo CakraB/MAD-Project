@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 public class ForumFragment extends Fragment {
 
-    RecyclerView rvArticles;
-    ArrayList<News> newsArrayList;
-    NewsAdapter newsAdapter;
+    RecyclerView rvForum;
+    ArrayList<Forum> forumArrayList;
+    ForumAdapter forumAdapter;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -32,38 +32,18 @@ public class ForumFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rvArticles = view.findViewById(R.id.rvNews);
-        newsArrayList = new ArrayList<>();
-        newsAdapter = new NewsAdapter(newsArrayList, getContext());
-        rvArticles.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        rvArticles.setAdapter(newsAdapter);
+        rvForum = view.findViewById(R.id.rvForum);
+        forumArrayList = new ArrayList<Forum>();
+        forumAdapter = new ForumAdapter(forumArrayList, getContext());
+        rvForum.setLayoutManager(new GridLayoutManager(getContext(), 1));
+        rvForum.setAdapter(forumAdapter);
 
-        newsArrayList.add(new News(
+        forumArrayList.add(new Forum(
                 "Mobil",
                 "Mobil bla bla bla",
                 "10/11/2021"
         ));
-        newsArrayList.add(new News(
-                "Motor",
-                "Motor bla bla bla",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
-                "Mobil",
-                "Mobil bla bla bla",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
-                "Motor",
-                "Motor bla bla bla",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
-                "Mobil",
-                "Mobil bla bla bla",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
+        forumArrayList.add(new Forum(
                 "Motor",
                 "Motor bla bla bla",
                 "10/11/2021"
