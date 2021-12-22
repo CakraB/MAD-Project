@@ -12,9 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cakrab.project_mobile_vcare.Admin.AdminActivity;
 import com.cakrab.project_mobile_vcare.Database.UserHelper;
-
-import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -95,9 +94,15 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Credential is saved", Toast.LENGTH_SHORT).show();
                     }
 
-                    Intent login = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(login);
-                    finish();
+                    if (getEmail.contains("admin")) {
+                        Intent admin = new Intent(LoginActivity.this, AdminActivity.class);
+                        startActivity(admin);
+                        finish();
+                    } else {
+                        Intent login = new Intent(LoginActivity.this, HomeActivity.class);
+                        startActivity(login);
+                        finish();
+                    }
                 } else {
                     Toast.makeText(LoginActivity.this, "User is not Exist", Toast.LENGTH_SHORT).show();
                 }

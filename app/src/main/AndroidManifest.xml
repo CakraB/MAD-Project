@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Mobile_VCare">
         <activity
+            android:name=".Admin.CreateNewsActivity"
+            android:parentActivityName=".Admin.AdminActivity" />
+        <activity
+            android:name=".Admin.AdminActivity"
+            android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />
+        <activity
             android:name=".DetailGarageActivity"
             android:parentActivityName=".HomeActivity" />
         <activity

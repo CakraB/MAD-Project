@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="40dp"
+    tools:context=".Admin.CreateNewsActivity">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:gravity="center"
+        android:text="Add News"
+        android:textColor="@color/darkBlue"
+        android:textSize="32sp" />
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/poppinsreguler"
+        android:hint="Title"
+        android:inputType="text"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/poppinsreguler"
+        android:hint="Content"
+        android:inputType="textEmailAddress"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/poppinsreguler"
+        android:hint="Date"
+        android:inputType="textPassword"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/edit_password_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/poppinsreguler"
+        android:hint="Image URL"
+        android:inputType="textPassword"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/button_submit_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/happyYellow"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Add News"
+        android:textColor="@color/white" />
+
+</LinearLayout>
