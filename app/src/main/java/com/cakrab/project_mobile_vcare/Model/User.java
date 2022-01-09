@@ -1,11 +1,11 @@
 package com.cakrab.project_mobile_vcare.Model;
 
-public class UserModel {
+public class User {
 
     private int id;
     private String name, email, password;
 
-    public UserModel(int id, String name, String email, String password) {
+    public User(int id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;

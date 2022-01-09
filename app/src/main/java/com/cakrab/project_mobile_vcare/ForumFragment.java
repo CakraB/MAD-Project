@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.cakrab.project_mobile_vcare.Adapter.ForumAdapter;
+import com.cakrab.project_mobile_vcare.Model.Forum;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

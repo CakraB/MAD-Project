@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Admin.News.NewsActivity">
+
+    <LinearLayout
+        android:id="@+id/container_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/text_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppinsreguler"
+            android:text="News Panel "
+            android:textColor="@color/darkBlue"
+            android:textSize="16sp" />
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/container_news"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/container_welcome"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rvNews"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="8dp"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--                app:spanCount="1"-->
+<!--                tools:listitem="@layout/item_admin_news" />-->
+
+<!--        </LinearLayout>-->
+
+        <Button
+            android:id="@+id/button_add_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/spaceGray"
+            android:text="Add News" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.cakrab.project_mobile_vcare;
+package com.cakrab.project_mobile_vcare.Model;
 
 public class Forum {
 

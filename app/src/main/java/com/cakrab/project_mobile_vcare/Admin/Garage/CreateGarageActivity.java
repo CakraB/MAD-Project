@@ -1,12 +1,12 @@
-package com.cakrab.project_mobile_vcare.Admin;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.cakrab.project_mobile_vcare.Admin.Garage;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.cakrab.project_mobile_vcare.R;
 
-public class CreateNewsActivity extends AppCompatActivity {
+public class CreateGarageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

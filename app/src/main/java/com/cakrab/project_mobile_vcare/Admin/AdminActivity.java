@@ -2,17 +2,17 @@ package com.cakrab.project_mobile_vcare.Admin;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cakrab.project_mobile_vcare.LoginActivity;
+import com.cakrab.project_mobile_vcare.Auth.LoginActivity;
+import com.cakrab.project_mobile_vcare.Admin.News.NewsActivity;
 import com.cakrab.project_mobile_vcare.R;
 
 public class AdminActivity extends AppCompatActivity {
 
-    Button buttonAddNews, btnLogout;
+    Button buttonNews, buttonGarage, btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +23,20 @@ public class AdminActivity extends AppCompatActivity {
     }
 
     public void init() {
-        buttonAddNews = findViewById(R.id.button_add_news);
+        buttonNews = findViewById(R.id.button_news);
+        buttonGarage = findViewById(R.id.button_garege);
         btnLogout = findViewById(R.id.btnLogout);
     }
 
     private void setAction() {
 
-        buttonAddNews.setOnClickListener(view -> {
-            Intent i = new Intent(AdminActivity.this, CreateNewsActivity.class);
+        buttonNews.setOnClickListener(view -> {
+            Intent i = new Intent(AdminActivity.this, NewsActivity.class);
+            startActivity(i);
+        });
+
+        buttonGarage.setOnClickListener(view -> {
+            Intent i = new Intent(AdminActivity.this, NewsActivity.class);
             startActivity(i);
         });
 

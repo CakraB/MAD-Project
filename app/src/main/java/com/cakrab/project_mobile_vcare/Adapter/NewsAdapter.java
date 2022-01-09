@@ -1,4 +1,4 @@
-package com.cakrab.project_mobile_vcare;
+package com.cakrab.project_mobile_vcare.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.cakrab.project_mobile_vcare.DetailNewsActivity;
+import com.cakrab.project_mobile_vcare.Model.News;
+import com.cakrab.project_mobile_vcare.R;
 
 import org.jetbrains.annotations.NotNull;
 

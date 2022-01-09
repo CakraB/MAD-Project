@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.cakrab.project_mobile_vcare.Auth.LoginActivity;
+
 import org.jetbrains.annotations.NotNull;
 
 public class ProfileFragment extends Fragment {

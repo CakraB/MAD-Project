@@ -29,11 +29,18 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_add_news"
+                android:id="@+id/button_news"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/happyYellow"
-                android:text="Add News" />
+                android:backgroundTint="@color/spaceGray"
+                android:text="News Panel" />
+
+            <Button
+                android:id="@+id/button_garege"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/spaceGray"
+                android:text="Garage Panel" />
 
             <Button
                 android:id="@+id/btnLogout"
@@ -46,23 +53,23 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/container_news"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/container_welcome"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/container_news"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/container_welcome"-->
+<!--        android:orientation="vertical">-->
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvNews"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="1"
-            tools:listitem="@layout/item_news" />
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rvNews"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="8dp"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--            app:spanCount="1"-->
+<!--            tools:listitem="@layout/item_news" />-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.cakrab.project_mobile_vcare;
+package com.cakrab.project_mobile_vcare.Adapter;
 
 
 import android.content.Context;
@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.cakrab.project_mobile_vcare.DetailGarageActivity;
+import com.cakrab.project_mobile_vcare.Model.Garage;
+import com.cakrab.project_mobile_vcare.R;
 
 import java.util.ArrayList;
 

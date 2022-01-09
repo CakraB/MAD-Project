@@ -1,4 +1,4 @@
-package com.cakrab.project_mobile_vcare;
+package com.cakrab.project_mobile_vcare.Auth;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.cakrab.project_mobile_vcare.Admin.AdminActivity;
 import com.cakrab.project_mobile_vcare.Database.UserHelper;
+import com.cakrab.project_mobile_vcare.MainActivity;
+import com.cakrab.project_mobile_vcare.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         isRemember = sharedPreferences.getBoolean("CHECKBOX", false);
 
         if (isRemember) {
-            Intent login = new Intent(LoginActivity.this, HomeActivity.class);
+            Intent login = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(login);
             finish();
         }
@@ -96,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(admin);
                     finish();
                 } else {
-                    Intent login = new Intent(LoginActivity.this, HomeActivity.class);
+                    Intent login = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(login);
                     finish();
                 }

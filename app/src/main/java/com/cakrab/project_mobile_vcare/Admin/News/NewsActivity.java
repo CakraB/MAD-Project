@@ -1,58 +1,37 @@
-package com.cakrab.project_mobile_vcare;
+package com.cakrab.project_mobile_vcare.Admin.News;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cakrab.project_mobile_vcare.Adapter.NewsAdapter;
 import com.cakrab.project_mobile_vcare.Model.News;
-
-import org.jetbrains.annotations.NotNull;
+import com.cakrab.project_mobile_vcare.R;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class NewsActivity extends AppCompatActivity {
 
-    TextView textEmail;
     RecyclerView rvNews;
     ArrayList<News> newsArrayList;
     NewsAdapter newsAdapter;
-    SharedPreferences sharedPreferences;
-    boolean isRemember = false;
-
-    @Nullable
-    @org.jetbrains.annotations.Nullable
-    @Override
-    public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
-    }
+    Button buttonAddNews;
 
     @Override
-    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_news);
 
-        rvNews = view.findViewById(R.id.rvNews);
-        textEmail = view.findViewById(R.id.text_email);
-
-        sharedPreferences = this.getActivity().getSharedPreferences("REMEMBER", Context.MODE_PRIVATE);
-        isRemember = sharedPreferences.getBoolean("CHECKBOX",false);
-
-        String getData = sharedPreferences.getString("EMAIL", "");
-        textEmail.setText(getData);
+        rvNews = findViewById(R.id.rvNews);
+        buttonAddNews = findViewById(R.id.button_add_news);
 
         newsArrayList = new ArrayList<>();
-        newsAdapter = new NewsAdapter(newsArrayList, getContext());
-        rvNews.setLayoutManager(new GridLayoutManager(getContext(), 1));
+        newsAdapter = new NewsAdapter(newsArrayList, this);
+        rvNews.setLayoutManager(new GridLayoutManager(this, 1));
         rvNews.setAdapter(newsAdapter);
 
         newsArrayList.add(new News(
@@ -75,5 +54,10 @@ public class HomeFragment extends Fragment {
                 "Motor banyak digunakan di daerah perkampungan untuk menjangkau daerah yang sulit",
                 "11/11/2021"
         ));
+
+        buttonAddNews.setOnClickListener(view -> {
+            Intent i = new Intent(NewsActivity.this, CreateNewsActivity.class);
+            startActivity(i);
+        });
     }
 }

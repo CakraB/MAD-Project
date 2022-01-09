@@ -10,31 +10,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Mobile_VCare">
         <activity
-            android:name=".Admin.CreateNewsActivity"
+            android:name=".EditProfileActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Admin.News.NewsActivity"
+            android:parentActivityName=".Admin.AdminActivity"></activity>
+        <activity
+            android:name=".Admin.News.CreateNewsActivity"
             android:parentActivityName=".Admin.AdminActivity" />
         <activity
             android:name=".Admin.AdminActivity"
             android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />
         <activity
             android:name=".DetailGarageActivity"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DetailForumActivity"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DetailNewsActivity"
-            android:parentActivityName=".HomeActivity" />
-        <activity
-            android:name=".HomeActivity"
-            android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />
-        <activity
-            android:name=".RegisterActivity"
-            android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />
-        <activity
-            android:name=".LoginActivity"
-            android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />
+        <activity
+            android:name=".Auth.RegisterActivity"
+            android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />
+        <activity
+            android:name=".Auth.LoginActivity"
+            android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
