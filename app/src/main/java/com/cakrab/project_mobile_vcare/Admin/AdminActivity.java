@@ -6,13 +6,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cakrab.project_mobile_vcare.Auth.LoginActivity;
+import com.cakrab.project_mobile_vcare.Admin.Garage.GarageActivity;
 import com.cakrab.project_mobile_vcare.Admin.News.NewsActivity;
+import com.cakrab.project_mobile_vcare.Auth.LoginActivity;
 import com.cakrab.project_mobile_vcare.R;
 
 public class AdminActivity extends AppCompatActivity {
 
-    Button buttonNews, buttonGarage, btnLogout;
+    Button buttonNews, buttonGarage, buttonLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,23 +25,23 @@ public class AdminActivity extends AppCompatActivity {
 
     public void init() {
         buttonNews = findViewById(R.id.button_news);
-        buttonGarage = findViewById(R.id.button_garege);
-        btnLogout = findViewById(R.id.btnLogout);
+        buttonGarage = findViewById(R.id.button_garage);
+        buttonLogout = findViewById(R.id.button_logout);
     }
 
     private void setAction() {
 
         buttonNews.setOnClickListener(view -> {
-            Intent i = new Intent(AdminActivity.this, NewsActivity.class);
-            startActivity(i);
+            Intent news = new Intent(AdminActivity.this, NewsActivity.class);
+            startActivity(news);
         });
 
         buttonGarage.setOnClickListener(view -> {
-            Intent i = new Intent(AdminActivity.this, NewsActivity.class);
-            startActivity(i);
+            Intent garage = new Intent(AdminActivity.this, GarageActivity.class);
+            startActivity(garage);
         });
 
-        btnLogout.setOnClickListener(view -> {
+        buttonLogout.setOnClickListener(view -> {
             Intent logout = new Intent(AdminActivity.this, LoginActivity.class);
             startActivity(logout);
         });

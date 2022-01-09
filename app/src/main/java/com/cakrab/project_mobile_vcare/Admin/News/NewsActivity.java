@@ -26,12 +26,11 @@ public class NewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
-        rvNews = findViewById(R.id.rvNews);
         buttonAddNews = findViewById(R.id.button_add_news);
-
+        rvNews = findViewById(R.id.rvNews);
         newsArrayList = new ArrayList<>();
-        newsAdapter = new NewsAdapter(newsArrayList, this);
-        rvNews.setLayoutManager(new GridLayoutManager(this, 1));
+        newsAdapter = new NewsAdapter(newsArrayList, getApplicationContext());
+        rvNews.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
         rvNews.setAdapter(newsAdapter);
 
         newsArrayList.add(new News(

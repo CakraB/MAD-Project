@@ -36,14 +36,14 @@
                 android:text="News Panel" />
 
             <Button
-                android:id="@+id/button_garege"
+                android:id="@+id/button_garage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/spaceGray"
                 android:text="Garage Panel" />
 
             <Button
-                android:id="@+id/btnLogout"
+                android:id="@+id/button_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/darkBlue"
@@ -52,24 +52,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/container_news"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/container_welcome"-->
-<!--        android:orientation="vertical">-->
-
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/rvNews"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="vertical"-->
-<!--            android:padding="8dp"-->
-<!--            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-<!--            app:spanCount="1"-->
-<!--            tools:listitem="@layout/item_news" />-->
-
-<!--    </LinearLayout>-->
 
 </RelativeLayout>

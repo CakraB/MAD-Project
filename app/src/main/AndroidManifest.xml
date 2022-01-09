@@ -10,14 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Mobile_VCare">
         <activity
-            android:name=".EditProfileActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Admin.Garage.CreateGarageActivity"
+            android:parentActivityName=".Admin.Garage.GarageActivity" />
         <activity
-            android:name=".Admin.News.NewsActivity"
-            android:parentActivityName=".Admin.AdminActivity"></activity>
+            android:name=".Admin.Garage.GarageActivity"
+            android:parentActivityName=".Admin.AdminActivity" />
         <activity
             android:name=".Admin.News.CreateNewsActivity"
+            android:parentActivityName=".Admin.News.NewsActivity" />
+        <activity
+            android:name=".Admin.News.NewsActivity"
             android:parentActivityName=".Admin.AdminActivity" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Admin.AdminActivity"
             android:theme="@style/Theme.Project_Mobile_VCare.NoActionBar" />

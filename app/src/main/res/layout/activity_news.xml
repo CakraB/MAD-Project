@@ -24,25 +24,6 @@
             android:textColor="@color/darkBlue"
             android:textSize="16sp" />
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/container_news"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/container_welcome"-->
-<!--            android:orientation="vertical">-->
-
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/rvNews"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="vertical"-->
-<!--                android:padding="8dp"-->
-<!--                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-<!--                app:spanCount="1"-->
-<!--                tools:listitem="@layout/item_admin_news" />-->
-
-<!--        </LinearLayout>-->
-
         <Button
             android:id="@+id/button_add_news"
             android:layout_width="match_parent"
@@ -52,5 +33,21 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/container_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="1"
+            tools:listitem="@layout/item_news" />
+
+    </LinearLayout>
 </LinearLayout>
