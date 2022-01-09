@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public class GarageAdapter extends RecyclerView.Adapter<GarageAdapter.GarageViewHolder> {
 
-    private ArrayList <Garage> garageArrayList;
-    private Context context;
+    private final ArrayList <Garage> garageArrayList;
+    private final Context context;
 
     public GarageAdapter(ArrayList<Garage> garage, Context context){
         this.garageArrayList = garage;
@@ -35,17 +35,14 @@ public class GarageAdapter extends RecyclerView.Adapter<GarageAdapter.GarageView
     public void onBindViewHolder(@NonNull GarageViewHolder holder, int position) {
         Garage garage = garageArrayList.get(position);
         holder.garageName.setText(garage.getGarageName());
-        holder.garageCabang.setText(garage.getGarageCabang());
+        holder.garageBranch.setText(garage.getGarageBranch());
         holder.garageImage.setImageResource(R.drawable.ic_launcher_background);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(context, DetailGarageActivity.class);
-                i.putExtra("NAME", garage.getGarageName());
-                i.putExtra("CABANG", garage.getGarageCabang());
-                context.startActivity(i);
-            }
+        holder.itemView.setOnClickListener(view -> {
+            Intent i = new Intent(context, DetailGarageActivity.class);
+            i.putExtra("NAME", garage.getGarageName());
+            i.putExtra("BRANCH", garage.getGarageBranch());
+            context.startActivity(i);
         });
 
     }
@@ -57,13 +54,13 @@ public class GarageAdapter extends RecyclerView.Adapter<GarageAdapter.GarageView
 
     public static class GarageViewHolder extends RecyclerView.ViewHolder {
 
-        TextView garageName, garageCabang;
+        TextView garageName, garageBranch;
         ImageView garageImage;
 
         public GarageViewHolder(@NonNull View itemView) {
             super(itemView);
             garageName = itemView.findViewById(R.id.text_garage_name);
-            garageCabang = itemView.findViewById(R.id.text_garage_cabang);
+            garageBranch = itemView.findViewById(R.id.text_garage_branch);
             garageImage = itemView.findViewById(R.id.image_garage);
         }
     }

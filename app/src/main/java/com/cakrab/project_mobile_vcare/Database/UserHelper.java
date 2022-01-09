@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class UserHelper {
-    private DatabaseHelper databaseHelper;
+    private final DatabaseHelper databaseHelper;
     private SQLiteDatabase sqLiteDatabase;
 
     public UserHelper(Context context) {
@@ -21,10 +21,7 @@ public class UserHelper {
         contentValues.put("password", password);
         long queryResult = sqLiteDatabase.insert(databaseHelper.TABLE_USER, null, contentValues);
         // If Something Wrong return false
-        if (queryResult == -1) {
-            return false;
-        }
-        return true;
+        return queryResult != -1;
     }
 
     public boolean readUser (String email, String password) {
@@ -32,10 +29,7 @@ public class UserHelper {
         String sql = "SELECT * FROM " + databaseHelper.TABLE_USER + " WHERE email= ?"  + " AND password= ?" ;
         Cursor cursor = sqLiteDatabase.rawQuery(sql, new String[]{email, password});
         cursor.moveToLast();
-        if (cursor.getCount() > 0) {
-            return true;
-        }
-        return false;
+        return cursor.getCount() > 0;
     }
 
     public boolean updateUser(String id, String name, String email, String password) {
@@ -47,22 +41,14 @@ public class UserHelper {
         contentValues.put("password", password);
         long queryResult = sqLiteDatabase.update(databaseHelper.TABLE_USER, contentValues, "id = ?", new String[]{id});
         // If Something Wrong return false
-        if (queryResult > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return queryResult > 0;
     }
 
     public boolean deleteUser(String id) {
         sqLiteDatabase = databaseHelper.getWritableDatabase();
         long queryResult = sqLiteDatabase.delete(databaseHelper.TABLE_USER, "id = ?", new String[]{id});
         // If Something Wrong return false
-        if (queryResult > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return queryResult > 0;
     }
 
     public void close() {

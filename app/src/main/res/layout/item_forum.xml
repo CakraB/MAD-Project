@@ -36,16 +36,16 @@
                 android:textColor="@color/black"
                 android:textSize="16dp" />
 
-            <TextView
-                android:id="@+id/text_content_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:fontFamily="@font/poppinsreguler"
-                android:maxLines="2"
-                android:text="Isi Forum"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
+<!--            <TextView-->
+<!--                android:id="@+id/text_content_desc"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:fontFamily="@font/poppinsreguler"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="Isi Forum"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
 
             <TextView
                 android:id="@+id/text_content_date"

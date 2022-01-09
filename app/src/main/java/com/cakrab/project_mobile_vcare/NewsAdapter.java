@@ -17,8 +17,8 @@ import java.util.ArrayList;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
-    private ArrayList<News> newsArrayLists;
-    private Context context;
+    private final ArrayList<News> newsArrayLists;
+    private final Context context;
 
     public NewsAdapter(ArrayList<News> articles, Context context) {
         this.newsArrayLists = articles;
@@ -29,7 +29,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     @Override
     public NewsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_news, parent, false);
-        return new NewsAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -41,15 +41,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.imageView.setImageResource(R.drawable.ic_launcher_background);
 
         // Click Detail Page
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(context, DetailNewsActivity.class);
-                i.putExtra("NAME", news.getArticleName());
-                i.putExtra("DESC", news.getArticleDesc());
-                i.putExtra("DATE", news.getArticleDate());
-                context.startActivity(i);
-            }
+        holder.itemView.setOnClickListener(view -> {
+            Intent i = new Intent(context, DetailNewsActivity.class);
+            i.putExtra("NAME", news.getArticleName());
+            i.putExtra("DESC", news.getArticleDesc());
+            i.putExtra("DATE", news.getArticleDate());
+            context.startActivity(i);
         });
     }
 
@@ -58,7 +55,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         return newsArrayLists.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textName, textDesc, textDate;
         ImageView imageView;

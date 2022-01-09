@@ -1,16 +1,15 @@
 package com.cakrab.project_mobile_vcare;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.cakrab.project_mobile_vcare.Admin.AdminActivity;
 import com.cakrab.project_mobile_vcare.Database.UserHelper;
@@ -47,77 +46,71 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // Button OnClick
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Get Input Value
-                String getEmail = editEmail.getText().toString();
-                String getPassword = editPassword.getText().toString();
-                boolean rememberMe = checkRemember.isChecked();
-                // Validate Email
-                try {
-                    // Input Email is Empty
-                    if (getEmail.trim().isEmpty()) {
-                        Toast.makeText(LoginActivity.this, "Email must be filled",Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                   // Input Email is Format
-                    else if (!getEmail.contains("@") || !getEmail.endsWith(".com")) {
-                        Toast.makeText(LoginActivity.this, "Email is invalid format", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
+        buttonLogin.setOnClickListener(view -> {
+            // Get Input Value
+            String getEmail = editEmail.getText().toString();
+            String getPassword = editPassword.getText().toString();
+            boolean rememberMe = checkRemember.isChecked();
+            // Validate Email
+            try {
+                // Input Email is Empty
+                if (getEmail.trim().isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "Email must be filled",Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                // Validate Password
-                try {
-                    // Input Email is Empty
-                    if (getPassword.trim().isEmpty()) {
-                        Toast.makeText(LoginActivity.this, "Password must be filled",Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
+               // Input Email is Format
+                else if (!getEmail.contains("@") || !getEmail.endsWith(".com")) {
+                    Toast.makeText(LoginActivity.this, "Email is invalid format", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                // Check user credential
-                if (dbUser.readUser(getEmail, getPassword)) {
-                    // Validate Remember Me Checkbox
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("EMAIL", getEmail);
-                    editor.putString("PASSWORD", getPassword);
-                    editor.putBoolean("CHECKBOX", rememberMe);
-                    editor.apply();
-
-                    if (rememberMe) {
-                        Toast.makeText(LoginActivity.this, "Credential is saved", Toast.LENGTH_SHORT).show();
-                    }
-
-                    if (getEmail.contains("admin")) {
-                        Intent admin = new Intent(LoginActivity.this, AdminActivity.class);
-                        startActivity(admin);
-                        finish();
-                    } else {
-                        Intent login = new Intent(LoginActivity.this, HomeActivity.class);
-                        startActivity(login);
-                        finish();
-                    }
-                } else {
-                    Toast.makeText(LoginActivity.this, "User is not Exist", Toast.LENGTH_SHORT).show();
-                }
-                // Reset All Data on Input Fields
-                editEmail.setText("");
-                editPassword.setText("");
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
             }
+            // Validate Password
+            try {
+                // Input Email is Empty
+                if (getPassword.trim().isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "Password must be filled",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(LoginActivity.this, "Error Found!, Please Try Again",Toast.LENGTH_SHORT).show();
+            }
+            // Check user credential
+            if (dbUser.readUser(getEmail, getPassword)) {
+                // Validate Remember Me Checkbox
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("EMAIL", getEmail);
+                editor.putString("PASSWORD", getPassword);
+                editor.putBoolean("CHECKBOX", rememberMe);
+                editor.apply();
+
+                if (rememberMe) {
+                    Toast.makeText(LoginActivity.this, "Credential is saved", Toast.LENGTH_SHORT).show();
+                }
+
+                if (getEmail.contains("admin")) {
+                    Intent admin = new Intent(LoginActivity.this, AdminActivity.class);
+                    startActivity(admin);
+                    finish();
+                } else {
+                    Intent login = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(login);
+                    finish();
+                }
+            } else {
+                Toast.makeText(LoginActivity.this, "User is not Exist", Toast.LENGTH_SHORT).show();
+            }
+            // Reset All Data on Input Fields
+            editEmail.setText("");
+            editPassword.setText("");
         });
         // Button Move to Register Page Action
-        textRegisterHere.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(i);
-            }
+        textRegisterHere.setOnClickListener(view -> {
+            Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(i);
         });
     }
 }

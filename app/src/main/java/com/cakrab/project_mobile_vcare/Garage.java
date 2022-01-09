@@ -2,11 +2,11 @@ package com.cakrab.project_mobile_vcare;
 
 public class Garage {
     private String garageName;
-    private String garageCabang;
+    private String garageBranch;
 
-    public Garage(String garageName, String garageCabang){
+    public Garage(String garageName, String garageBranch){
         this.garageName = garageName;
-        this.garageCabang = garageCabang;
+        this.garageBranch = garageBranch;
     }
 
     public String getGarageName(){
@@ -17,12 +17,12 @@ public class Garage {
         this.garageName = garageName;
     }
 
-    public String getGarageCabang(){
-        return garageCabang;
+    public String getGarageBranch(){
+        return garageBranch;
     }
 
-    public void setGarageCabang(String garageCabang) {
-        this.garageCabang = garageCabang;
+    public void setGarageBranch(String garageBranch) {
+        this.garageBranch = garageBranch;
     }
 
 }

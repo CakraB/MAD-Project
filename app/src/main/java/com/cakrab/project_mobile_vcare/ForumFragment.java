@@ -39,13 +39,28 @@ public class ForumFragment extends Fragment {
         rvForum.setAdapter(forumAdapter);
 
         forumArrayList.add(new Forum(
-                "Mobil",
-                "Mobil bla bla bla",
+                "Tips Isi BBM yang Aman dari Kecurangan dan Maling di SPBUl",
+                "Turun atau keluar dari mobil ketika melakukan pengisian Bahan Bakar Minyak (BBM) dipercaya mampu menekan risiko terbakar akibat bensin dan kecurangan dari oknum SPBU tertentu. Mengingat, beberapa SPBU saat ini masih melakukan kecurangan dengan cara memanipulasi dispenser, seperti video unggahan di Instagram pribadi",
+                "21/12/2021"
+        ));
+        forumArrayList.add(new Forum(
+                "Contoh Lain Forum",
+                "Contoh isi Forum",
                 "10/11/2021"
         ));
         forumArrayList.add(new Forum(
-                "Motor",
-                "Motor bla bla bla",
+                "Contoh Lain Forum",
+                "Contoh isi Forum",
+                "10/11/2021"
+        ));
+        forumArrayList.add(new Forum(
+                "Contoh Lain Forum",
+                "Contoh isi Forum",
+                "10/11/2021"
+        ));
+        forumArrayList.add(new Forum(
+                "Contoh Lain Forum",
+                "Contoh isi Forum",
                 "10/11/2021"
         ));
     }

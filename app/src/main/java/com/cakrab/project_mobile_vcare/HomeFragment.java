@@ -55,14 +55,14 @@ public class HomeFragment extends Fragment {
         rvNews.setAdapter(newsAdapter);
 
         newsArrayList.add(new News(
-                "Mobil Besar Namanya",
-                "Mobil banyak digunakan di jalanan besar dan ramai penduduk",
-                "10/11/2021"
+                "Punya Mobil Listrik, Jangan Salah Pilih Ban Karena Bisa Boros Tenaga",
+                "Mengendarai mobil listrik atau hybrid memiliki banyak keuntungan. Selain hemat tenaga, mobil tersebut juga ramah lingkungan. Untuk perawatannya, mobil listrik atau hybrid memang cukup berbeda dibandingkan mobil bermesin konvensional. Bahkan, tak banyak yang paham bahwa dalam penggantian ban pun tidak bisa dilakukan sembarangan",
+                "22/12/2021"
         ));
         newsArrayList.add(new News(
-                "Motor Cepat Sekali",
-                "Motor banyak digunakan di daerah perkampungan untuk menjangkau daerah yang sulit",
-                "11/11/2021"
+                "Sirkuit Mandalika Akan Jadi Tuan Rumah GT World Challenge Asia 2022",
+                "Mulai musim depan, Pertamina Mandalika International Street Circuit, Lombok, akan menjadi tuan rumah dari banyak kejuaraan balap bertaraf internasional. Selain World Superbike (WorldSBK) dan MotoGP, Sirkuit Mandalika belum lama ini dikabarkan masuk kalender GT World Challenge Asia 2022.",
+                "22/12/2021"
         ));
         newsArrayList.add(new News(
                 "Mobil Besar Namanya",

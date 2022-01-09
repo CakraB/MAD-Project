@@ -25,12 +25,9 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void validate() {
-        btnEditProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
-                startActivity(intent);
-            }
+        btnEditProfile.setOnClickListener(viewProfile -> {
+            Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
+            startActivity(intent);
         });
     }
 }

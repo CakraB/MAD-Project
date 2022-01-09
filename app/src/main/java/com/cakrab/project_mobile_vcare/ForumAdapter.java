@@ -36,7 +36,7 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ForumAdapter.ViewHolder holder, int position) {
         Forum forum = forumArrayLists.get(position);
         holder.textName.setText(forum.getForumName());
-        holder.textDesc.setText(forum.getForumDesc());
+//        holder.textDesc.setText(forum.getForumDesc());
         holder.textDate.setText(forum.getForumDate());
         holder.imageView.setImageResource(R.drawable.ic_launcher_background);
 

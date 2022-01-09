@@ -43,24 +43,18 @@ public class ProfileFragment extends Fragment {
         textProfileName.setText(getData);
         textProfileEmail.setText(getData);
 
-        btnEditProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), EditProfileActivity.class);
-                startActivity(intent);
-            }
+        btnEditProfile.setOnClickListener(viewProfile -> {
+            Intent intent = new Intent(getContext(), EditProfileActivity.class);
+            startActivity(intent);
         });
 
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.clear();
-                editor.apply();
+        btnLogout.setOnClickListener(viewLogout -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
 
-                Intent logout = new Intent(getContext(), LoginActivity.class);
-                startActivity(logout);
-            }
+            Intent logout = new Intent(getContext(), LoginActivity.class);
+            startActivity(logout);
         });
     }
 }

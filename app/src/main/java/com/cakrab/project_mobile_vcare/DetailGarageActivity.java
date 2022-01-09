@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailGarageActivity extends AppCompatActivity {
 
-    TextView garageName, garageCabang;
+    TextView garageName, garageBranch;
     ImageView imageGarage;
 
     @Override
@@ -18,14 +18,14 @@ public class DetailGarageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_news);
 
         garageName = findViewById(R.id.text_garage_name);
-        garageCabang = findViewById(R.id.text_garage_cabang);
+        garageBranch = findViewById(R.id.text_garage_branch);
         imageGarage = findViewById(R.id.image_garage);
 
         Intent getGarage = getIntent();
         String getGarageName = getGarage.getStringExtra("NAME");
-        String getGarageCabang = getGarage.getStringExtra("CABANG");
+        String getGarageBranch = getGarage.getStringExtra("BRANCH");
 
         garageName.setText(getGarageName);
-        garageCabang.setText(getGarageCabang);
+        garageBranch.setText(getGarageBranch);
     }
 }
