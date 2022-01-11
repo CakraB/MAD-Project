@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp"
-    tools:context=".Admin.News.CreateNewsActivity">
+    tools:context=".Admin.News.EditNewsActivity">
 
     <TextView
         android:id="@+id/text_title"
@@ -15,7 +15,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppinssemibold"
         android:gravity="center"
-        android:text="Add News"
+        android:text="Edit News"
         android:textColor="@color/darkBlue"
         android:textSize="32sp" />
 
@@ -54,13 +54,22 @@
         android:padding="16dp" />
 
     <Button
-        android:id="@+id/button_submit_news"
+        android:id="@+id/button_update_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/happyYellow"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Update News"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/button_delete_news"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/happyYellow"
+        android:backgroundTint="@color/spaceGray"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Add News"
+        android:text="Delete News"
         android:textColor="@color/white" />
 
 </LinearLayout>

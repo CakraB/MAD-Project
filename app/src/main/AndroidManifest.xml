@@ -16,6 +16,9 @@
             android:name=".Admin.Garage.GarageActivity"
             android:parentActivityName=".Admin.AdminActivity" />
         <activity
+            android:name=".Admin.News.EditNewsActivity"
+            android:parentActivityName=".Admin.News.NewsActivity"/>
+        <activity
             android:name=".Admin.News.CreateNewsActivity"
             android:parentActivityName=".Admin.News.NewsActivity" />
         <activity

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cakrab.project_mobile_vcare.DetailNewsActivity;
 import com.cakrab.project_mobile_vcare.Model.News;
 import com.cakrab.project_mobile_vcare.R;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -21,13 +22,29 @@ import java.util.ArrayList;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
-    private final ArrayList<News> newsArrayLists;
-    private final Context context;
+    private ArrayList<News> newsList;
+    private Context context;
 
-    public NewsAdapter(ArrayList<News> articles, Context context) {
-        this.newsArrayLists = articles;
+    public NewsAdapter(Context context, ArrayList<News> newsList) {
         this.context = context;
+        this.newsList = newsList;
     }
+
+    // Cara Aslab
+//    private List<News> newsList;
+//    private Context context;
+//
+//    public NewsAdapter(Context context) {
+//        this.context = context;
+//    }
+//
+//    public void setNewsArrayLists(List<News> newsList) {
+//        this.newsList = newsList;
+//    }
+//
+//    public List<News> getNewsList() {
+//        return newsList;
+//    }
 
     @NonNull
     @Override
@@ -38,38 +55,52 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull NewsAdapter.ViewHolder holder, int position) {
-        News news = newsArrayLists.get(position);
-        holder.textName.setText(news.getArticleName());
-        holder.textDesc.setText(news.getArticleDesc());
-        holder.textDate.setText(news.getArticleDate());
-        holder.imageView.setImageResource(R.drawable.ic_launcher_background);
+        News news = newsList.get(position);
+        holder.textName.setText(news.getNewsName());
+        holder.textDesc.setText(news.getNewsDesc());
+        // Convert Image Link To Image with Picasso Libraru
+        if (news.getNewsImage() != null) {
+            Picasso.get().load(news.getNewsImage()).into(holder.imageView);
+        } else {
+            holder.imageView.setImageResource(R.drawable.ic_launcher_background);
+        }
 
         // Click Detail Page
         holder.itemView.setOnClickListener(view -> {
             Intent i = new Intent(context, DetailNewsActivity.class);
-            i.putExtra("NAME", news.getArticleName());
-            i.putExtra("DESC", news.getArticleDesc());
-            i.putExtra("DATE", news.getArticleDate());
+            i.putExtra("ID", news.getId());
+            i.putExtra("NAME", news.getNewsName());
+            i.putExtra("DESC", news.getNewsDesc());
+            i.putExtra("IMAGE", news.getNewsImage());
             context.startActivity(i);
         });
     }
 
     @Override
     public int getItemCount() {
-        return newsArrayLists.size();
+        return newsList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textName, textDesc, textDate;
+        TextView textName, textDesc;
         ImageView imageView;
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             textName = itemView.findViewById(R.id.text_content_name);
             textDesc = itemView.findViewById(R.id.text_content_desc);
-            textDate = itemView.findViewById(R.id.text_content_date);
             imageView = itemView.findViewById(R.id.image_content);
+            // Test aja
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    News news = newsList.get(getAdapterPosition());
+//                    Intent i = new Intent(context, DetailNewsActivity.class);
+//                    i.putExtra("news", news);
+//                    context.startActivity(i);
+//                }
+//            });
         }
     }
 }

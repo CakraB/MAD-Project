@@ -13,7 +13,7 @@
         <ImageView
             android:id="@+id/image_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
             android:scaleType="fitXY"
             android:src="@drawable/ic_launcher_background" />
 
@@ -47,14 +47,14 @@
                 android:textColor="@color/black"
                 android:textSize="12dp" />
 
-            <TextView
-                android:id="@+id/text_content_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppinsreguler"
-                android:paddingTop="8dp"
-                android:text="Waktu Berita"
-                android:textSize="12dp" />
+<!--            <TextView-->
+<!--                android:id="@+id/text_content_date"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/poppinsreguler"-->
+<!--                android:paddingTop="8dp"-->
+<!--                android:text="Waktu Berita"-->
+<!--                android:textSize="12dp" />-->
         </LinearLayout>
 
     </RelativeLayout>

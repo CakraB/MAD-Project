@@ -1,38 +1,59 @@
 package com.cakrab.project_mobile_vcare.Model;
 
+import com.google.firebase.firestore.Exclude;
+
 public class News {
 
-    private String articleName;
-    private String articleDesc;
-    private String articleDate;
-
-    public News(String articleName, String articleDesc, String articleDate) {
-        this.articleName = articleName;
-        this.articleDesc = articleDesc;
-        this.articleDate = articleDate;
+    // getter method for our id
+    public String getId() {
+        return id;
     }
 
-    public String getArticleName() {
-        return articleName;
+    // setter method for our id
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setArticleName(String articleName) {
-        this.articleName = articleName;
+    // we are using exclude because
+    // we are not saving our id
+    @Exclude
+    private String id;
+
+    private String newsTitle;
+    private String newsDesc;
+    private String newsImage;
+
+    public News() {
+        // For Firebase
     }
 
-    public String getArticleDesc() {
-        return articleDesc;
+    public News(String newsTitle, String newsDesc, String newsImage) {
+        this.newsTitle = newsTitle;
+        this.newsDesc = newsDesc;
+        this.newsImage = newsImage;
     }
 
-    public void setArticleDesc(String articleDesc) {
-        this.articleDesc = articleDesc;
+    public String getNewsName() {
+        return newsTitle;
     }
 
-    public String getArticleDate() {
-        return articleDate;
+    public void setNewsName(String newsTitle) {
+        this.newsTitle = newsTitle;
     }
 
-    public void setArticleDate(String articleDate) {
-        this.articleDate = articleDate;
+    public String getNewsDesc() {
+        return newsDesc;
+    }
+
+    public void setNewsDesc(String newsDesc) {
+        this.newsDesc = newsDesc;
+    }
+
+    public String getNewsImage() {
+        return newsImage;
+    }
+
+    public void setNewsImage(String newsImage) {
+        this.newsImage = newsImage;
     }
 }

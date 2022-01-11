@@ -3,6 +3,8 @@ package com.cakrab.project_mobile_vcare.Admin.News;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -11,15 +13,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cakrab.project_mobile_vcare.Adapter.NewsAdapter;
 import com.cakrab.project_mobile_vcare.Model.News;
 import com.cakrab.project_mobile_vcare.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NewsActivity extends AppCompatActivity {
 
-    RecyclerView rvNews;
-    ArrayList<News> newsArrayList;
+    RecyclerView newsRV;
+    ArrayList<News> newsList;
     NewsAdapter newsAdapter;
     Button buttonAddNews;
+    FirebaseFirestore db;
+    TextView newsCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,32 +37,38 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         buttonAddNews = findViewById(R.id.button_add_news);
-        rvNews = findViewById(R.id.rvNews);
-        newsArrayList = new ArrayList<>();
-        newsAdapter = new NewsAdapter(newsArrayList, getApplicationContext());
-        rvNews.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
-        rvNews.setAdapter(newsAdapter);
-
-        newsArrayList.add(new News(
-                "Punya Mobil Listrik, Jangan Salah Pilih Ban Karena Bisa Boros Tenaga",
-                "Mengendarai mobil listrik atau hybrid memiliki banyak keuntungan. Selain hemat tenaga, mobil tersebut juga ramah lingkungan. Untuk perawatannya, mobil listrik atau hybrid memang cukup berbeda dibandingkan mobil bermesin konvensional. Bahkan, tak banyak yang paham bahwa dalam penggantian ban pun tidak bisa dilakukan sembarangan",
-                "22/12/2021"
-        ));
-        newsArrayList.add(new News(
-                "Sirkuit Mandalika Akan Jadi Tuan Rumah GT World Challenge Asia 2022",
-                "Mulai musim depan, Pertamina Mandalika International Street Circuit, Lombok, akan menjadi tuan rumah dari banyak kejuaraan balap bertaraf internasional. Selain World Superbike (WorldSBK) dan MotoGP, Sirkuit Mandalika belum lama ini dikabarkan masuk kalender GT World Challenge Asia 2022.",
-                "22/12/2021"
-        ));
-        newsArrayList.add(new News(
-                "Mobil Besar Namanya",
-                "Mobil banyak digunakan di jalanan besar dan ramai penduduk",
-                "10/11/2021"
-        ));
-        newsArrayList.add(new News(
-                "Motor Cepat Sekali",
-                "Motor banyak digunakan di daerah perkampungan untuk menjangkau daerah yang sulit",
-                "11/11/2021"
-        ));
+        newsRV = findViewById(R.id.newsRV);
+        db = FirebaseFirestore.getInstance();
+        // Arraylist
+        newsList = new ArrayList<>();
+        newsRV.setHasFixedSize(true);
+        newsRV.setLayoutManager(new GridLayoutManager(NewsActivity.this, 1));
+        // Set Adapter
+        newsAdapter = new NewsAdapter(NewsActivity.this, newsList);
+        newsRV.setAdapter(newsAdapter);
+        // Retrieve Data from Firestore
+        db.collection("news")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot documentSnapshot : list) {
+                                News news = documentSnapshot.toObject(News.class);
+                                news.setId(documentSnapshot.getId());
+                                newsList.add(news);
+                            }
+                            newsAdapter.notifyDataSetChanged();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(Exception e) {
+                        Toast.makeText(getApplicationContext(), "Fail to get data", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         buttonAddNews.setOnClickListener(view -> {
             Intent i = new Intent(NewsActivity.this, CreateNewsActivity.class);

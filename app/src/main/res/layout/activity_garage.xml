@@ -33,21 +33,21 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/container_news"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/container_news"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvGarage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="1"
-            tools:listitem="@layout/item_garage" />
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rvGarage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="8dp"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--            app:spanCount="1"-->
+<!--            tools:listitem="@layout/item_garage" />-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 </LinearLayout>
