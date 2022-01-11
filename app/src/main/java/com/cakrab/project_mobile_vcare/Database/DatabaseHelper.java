@@ -29,6 +29,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 USER_NAME + " TEXT, " +
                 USER_EMAIL + " TEXT, " +
                 USER_PASSWORD + " TEXT " + ")");
+        sqLiteDatabase.execSQL("INSERT INTO " + TABLE_USER + "(" +
+                USER_ID + ", " +
+                USER_NAME + ", " +
+                USER_EMAIL + " , " +
+                USER_PASSWORD + ") VALUES(1, 'Admin', 'admin@gmail.com', 'admin123')");
     }
 
     @Override
