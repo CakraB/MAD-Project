@@ -10,4 +10,9 @@
     <color name="darkBlue">#092133</color>
     <color name="spaceGray">#344857</color>
     <color name="happyYellow">#F0A501</color>
+    <!--    Custom Palette   -->
+    <color name="custom_blue">#2D49D7</color>
+    <color name="custom_black">#1B1D22</color>
+    <color name="custom_gray">#BAC2DB</color>
+    <color name="custom_white">#E6E6EE</color>
 </resources>

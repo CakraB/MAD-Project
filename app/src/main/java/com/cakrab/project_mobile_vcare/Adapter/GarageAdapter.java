@@ -20,11 +20,11 @@ import java.util.ArrayList;
 
 public class GarageAdapter extends RecyclerView.Adapter<GarageAdapter.GarageViewHolder> {
 
-    private final ArrayList <Garage> garageArrayList;
+    private final ArrayList <Garage> garageList;
     private final Context context;
 
     public GarageAdapter(ArrayList<Garage> garage, Context context){
-        this.garageArrayList = garage;
+        this.garageList = garage;
         this.context = context;
     }
 
@@ -37,7 +37,7 @@ public class GarageAdapter extends RecyclerView.Adapter<GarageAdapter.GarageView
 
     @Override
     public void onBindViewHolder(@NonNull GarageViewHolder holder, int position) {
-        Garage garage = garageArrayList.get(position);
+        Garage garage = garageList.get(position);
         holder.garageName.setText(garage.getGarageName());
         holder.garageBranch.setText(garage.getGarageBranch());
         holder.garageImage.setImageResource(R.drawable.ic_launcher_background);
@@ -53,7 +53,7 @@ public class GarageAdapter extends RecyclerView.Adapter<GarageAdapter.GarageView
 
     @Override
     public int getItemCount() {
-        return garageArrayList.size();
+        return garageList.size();
     }
 
     public static class GarageViewHolder extends RecyclerView.ViewHolder {

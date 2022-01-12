@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="40dp"
     android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
     tools:context=".Auth.RegisterActivity">
 
     <TextView
@@ -14,65 +13,69 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppinssemibold"
         android:gravity="center"
         android:text="Register"
-        android:textColor="@color/darkBlue"
-        android:textSize="32sp"
-        android:fontFamily="@font/poppinssemibold"/>
+        android:textColor="@color/custom_black"
+        android:textSize="32sp" />
 
     <EditText
         android:id="@+id/edit_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:padding="16dp"
+        android:backgroundTint="@color/custom_gray"
+        android:fontFamily="@font/poppinsreguler"
         android:hint="Fullname"
         android:inputType="text"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/poppinsreguler"/>
+        android:padding="16dp"
+        android:textColor="@color/custom_black" />
 
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:padding="16dp"
+        android:backgroundTint="@color/custom_gray"
+        android:fontFamily="@font/poppinsreguler"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/poppinsreguler"/>
+        android:padding="16dp"
+        android:textColor="@color/custom_black" />
 
     <EditText
         android:id="@+id/edit_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:padding="16dp"
+        android:backgroundTint="@color/custom_gray"
+        android:fontFamily="@font/poppinsreguler"
         android:hint="Password"
         android:inputType="textPassword"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/poppinsreguler"/>
+        android:padding="16dp"
+        android:textColor="@color/custom_black" />
 
     <EditText
         android:id="@+id/edit_password_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:padding="16dp"
-        android:inputType="textPassword"
+        android:backgroundTint="@color/custom_gray"
+        android:fontFamily="@font/poppinsreguler"
         android:hint="Password Confirmation"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/poppinsreguler"/>
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="@color/custom_black" />
 
     <Button
         android:id="@+id/button_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/custom_blue"
+        android:fontFamily="@font/poppinssemibold"
         android:text="Register"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/happyYellow"
-        android:fontFamily="@font/poppinssemibold"/>
+        android:textColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -82,17 +85,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsreguler"
             android:paddingRight="4dp"
             android:text="Already has an account?"
-            android:fontFamily="@font/poppinsreguler"/>
+            android:textColor="@color/custom_gray" />
 
         <TextView
             android:id="@+id/text_login_here"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinssemibold"
             android:text="Login here"
-            android:textColor="@color/happyYellow"
-            android:fontFamily="@font/poppinssemibold"/>
+            android:textColor="@color/custom_blue" />
 
     </LinearLayout>
 

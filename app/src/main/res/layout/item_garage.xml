@@ -33,7 +33,7 @@
                 android:fontFamily="@font/poppinssemibold"
                 android:maxLines="2"
                 android:text="Nama Bengkel"
-                android:textColor="@color/black"
+                android:textColor="@color/custom_black"
                 android:textSize="16dp" />
 
             <TextView
@@ -44,7 +44,7 @@
                 android:fontFamily="@font/poppinsreguler"
                 android:maxLines="2"
                 android:text="Cabang"
-                android:textColor="@color/black"
+                android:textColor="@color/custom_black"
                 android:textSize="12dp" />
 
         </LinearLayout>

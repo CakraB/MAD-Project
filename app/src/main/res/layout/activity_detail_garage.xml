@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailNewsActivity">
+    tools:context=".DetailGarageActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,20 +39,20 @@
 <!--                    android:textSize="12dp" />-->
 
                 <TextView
-                    android:id="@+id/text_content_name"
+                    android:id="@+id/text_garage_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppinssemibold"
-                    android:text="Judul Berita"
+                    android:text="Nama Garage"
                     android:textColor="@color/custom_black"
                     android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/text_content_desc"
+                    android:id="@+id/text_garage_branch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppinsreguler"
-                    android:text="Isi Berita"
+                    android:text="Cabang"
                     android:textColor="@color/custom_black"
                     android:textSize="16dp" />
 
@@ -65,15 +65,15 @@
                 android:layout_marginBottom="24dp"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/button_item_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/custom_blue"
-                    android:text="Edit News" />
+<!--                <Button-->
+<!--                    android:id="@+id/button_item_edit"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="16dp"-->
+<!--                    android:layout_marginRight="16dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/custom_blue"-->
+<!--                    android:text="Edit Garage" />-->
 
             </LinearLayout>
 

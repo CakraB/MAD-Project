@@ -91,16 +91,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             textName = itemView.findViewById(R.id.text_content_name);
             textDesc = itemView.findViewById(R.id.text_content_desc);
             imageView = itemView.findViewById(R.id.image_content);
-            // Test aja
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    News news = newsList.get(getAdapterPosition());
-//                    Intent i = new Intent(context, DetailNewsActivity.class);
-//                    i.putExtra("news", news);
-//                    context.startActivity(i);
-//                }
-//            });
         }
     }
 }

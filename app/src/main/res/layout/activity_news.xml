@@ -21,14 +21,14 @@
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/poppinssemibold"
             android:text="News Panel "
-            android:textColor="@color/darkBlue"
+            android:textColor="@color/custom_black"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/button_add_news"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/happyYellow"
+            android:backgroundTint="@color/custom_blue"
             android:text="Add News" />
 
     </LinearLayout>

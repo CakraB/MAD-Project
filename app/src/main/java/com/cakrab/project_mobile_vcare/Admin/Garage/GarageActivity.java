@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class GarageActivity extends AppCompatActivity {
 
-    RecyclerView rvGarage;
-    ArrayList<Garage> garageArrayList;
+    RecyclerView garageRV;
+    ArrayList<Garage> garageList;
     GarageAdapter garageAdapter;
     Button buttonAddGarage;
 
@@ -26,37 +26,37 @@ public class GarageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_garage);
 
         buttonAddGarage = findViewById(R.id.button_add_garage);
-//        rvGarage = findViewById(R.id.rvGarage);
-//        garageArrayList = new ArrayList<>();
-//        garageAdapter = new GarageAdapter(garageArrayList, getApplicationContext());
-//        rvGarage.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
-//        rvGarage.setAdapter(garageAdapter);
+//        garageRV = findViewById(R.id.garageRV);
+//        garageList = new ArrayList<>();
+//        garageAdapter = new GarageAdapter(garageList, getApplicationContext());
+//        garageRV.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
+//        garageRV.setAdapter(garageAdapter);
 //
-//        garageArrayList.add(new Garage(
+//        garageList.add(new Garage(
 //                "Suzuki",
 //                "20 Cabang"
 //        ));
-//        garageArrayList.add(new Garage(
+//        garageList.add(new Garage(
 //                "Honda",
 //                "15 Cabang"
 //        ));
-//        garageArrayList.add(new Garage(
+//        garageList.add(new Garage(
 //                "Kawasaki",
 //                "23 Cabang"
 //        ));
-//        garageArrayList.add(new Garage(
+//        garageList.add(new Garage(
 //                "Bengkel Abadi",
 //                "20 Cabang"
 //        ));
-//        garageArrayList.add(new Garage(
+//        garageList.add(new Garage(
 //                "Toyota",
 //                "54 Cabang"
 //        ));
-//        garageArrayList.add(new Garage(
+//        garageList.add(new Garage(
 //                "Bengkel Indah",
 //                "2 Cabang"
 //        ));
-//        garageArrayList.add(new Garage(
+//        garageList.add(new Garage(
 //                "Lexus",
 //                "3 Cabang"
 //        ));

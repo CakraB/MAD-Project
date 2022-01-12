@@ -10,6 +10,7 @@
         android:id="@+id/container_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/custom_blue"
         android:orientation="horizontal"
         android:padding="16dp">
 
@@ -19,7 +20,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsreguler"
             android:text="Welcome, "
-            android:textColor="@color/darkBlue"
+            android:textColor="@color/custom_white"
             android:textSize="16sp" />
 
         <TextView
@@ -28,7 +29,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinssemibold"
             android:text="Administrator"
-            android:textColor="@color/darkBlue"
+            android:textColor="@color/custom_white"
             android:textSize="16sp" />
 
     </LinearLayout>

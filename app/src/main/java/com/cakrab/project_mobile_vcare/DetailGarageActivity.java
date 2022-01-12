@@ -15,7 +15,7 @@ public class DetailGarageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_news);
+        setContentView(R.layout.activity_detail_garage);
 
         garageName = findViewById(R.id.text_garage_name);
         garageBranch = findViewById(R.id.text_garage_branch);

@@ -10,6 +10,7 @@
         android:id="@+id/header_garage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/custom_blue"
         android:orientation="horizontal"
         android:padding="16dp">
 
@@ -20,8 +21,8 @@
             android:fontFamily="@font/poppinssemibold"
             android:gravity="center"
             android:text="Garage"
-            android:textColor="@color/darkBlue"
-            android:textSize="24sp" />
+            android:textColor="@color/custom_white"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -31,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/header_garage"
         android:orientation="vertical"
+        android:padding="8dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_garage" />

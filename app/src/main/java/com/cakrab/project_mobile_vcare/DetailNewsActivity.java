@@ -11,12 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cakrab.project_mobile_vcare.Admin.News.CreateNewsActivity;
 import com.cakrab.project_mobile_vcare.Admin.News.EditNewsActivity;
-import com.cakrab.project_mobile_vcare.Model.News;
 import com.squareup.picasso.Picasso;
-
-import java.io.Serializable;
 
 public class DetailNewsActivity extends AppCompatActivity {
 
@@ -48,7 +44,6 @@ public class DetailNewsActivity extends AppCompatActivity {
             Picasso.get().load(getNewsImage).into(imageView);
         } else {
             Picasso.get().load(R.drawable.ic_launcher_background).into(imageView);
-//            imageView.setImageResource(R.drawable.ic_launcher_background);
         }
 
         // SharedPreference

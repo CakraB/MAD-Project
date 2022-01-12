@@ -12,14 +12,14 @@
     <ImageView
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:src="@drawable/ic_baseline_sports_motorsports_24"
+        android:src="@drawable/ic_helmet"
         android:layout_marginBottom="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="VCare"
-        android:textColor="@color/darkBlue"
+        android:textColor="@color/custom_black"
         android:textStyle="bold"
         android:fontFamily="@font/poppinssemibold"
         android:textSize="40sp"/>
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Get the latest automotif news"
-        android:textColor="@color/darkBlue"
+        android:textColor="@color/custom_gray"
         android:textStyle="italic"
         android:fontFamily="@font/poppinsreguler"
         android:textSize="16sp"/>
