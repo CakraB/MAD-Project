@@ -18,7 +18,7 @@ public class DetailNewsActivity extends AppCompatActivity {
 
     TextView textName, textDesc, textDate;
     Button buttonEdit;
-    ImageView imageView;
+    ImageView imageNews;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -29,8 +29,8 @@ public class DetailNewsActivity extends AppCompatActivity {
         textName = findViewById(R.id.text_content_name);
         textDesc = findViewById(R.id.text_content_desc);
         textDate = findViewById(R.id.text_content_date);
-        imageView = findViewById(R.id.image_content);
-        buttonEdit = findViewById(R.id.button_item_edit);
+        imageNews = findViewById(R.id.image_content);
+        buttonEdit = findViewById(R.id.button_edit);
 
         Intent getNews = getIntent();
         String getNewsId = getNews.getStringExtra("ID");
@@ -41,9 +41,9 @@ public class DetailNewsActivity extends AppCompatActivity {
         textName.setText(getNewsName);
         textDesc.setText(getNewsDesc);
         if (getNewsImage != null) {
-            Picasso.get().load(getNewsImage).into(imageView);
+            Picasso.get().load(getNewsImage).into(imageNews);
         } else {
-            Picasso.get().load(R.drawable.ic_launcher_background).into(imageView);
+            Picasso.get().load(R.drawable.ic_launcher_background).into(imageNews);
         }
 
         // SharedPreference

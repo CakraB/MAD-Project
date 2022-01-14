@@ -14,7 +14,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/image_content"
+                android:id="@+id/image_garage"
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
                 android:scaleType="fitXY"
@@ -24,19 +24,19 @@
                 android:id="@+id/card_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/image_content"
+                android:layout_below="@id/image_garage"
                 android:layout_centerVertical="true"
                 android:orientation="vertical"
                 android:padding="16dp">
 
-<!--                <TextView-->
-<!--                    android:id="@+id/text_content_date"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:fontFamily="@font/poppinsreguler"-->
-<!--                    android:paddingTop="8dp"-->
-<!--                    android:text="Waktu Berita"-->
-<!--                    android:textSize="12dp" />-->
+                <!--                <TextView-->
+                <!--                    android:id="@+id/text_content_date"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:fontFamily="@font/poppinsreguler"-->
+                <!--                    android:paddingTop="8dp"-->
+                <!--                    android:text="Waktu Berita"-->
+                <!--                    android:textSize="12dp" />-->
 
                 <TextView
                     android:id="@+id/text_garage_name"
@@ -48,7 +48,7 @@
                     android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/text_garage_branch"
+                    android:id="@+id/text_garage_desc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppinsreguler"
@@ -63,17 +63,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/card_content"
                 android:layout_marginBottom="24dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-<!--                <Button-->
-<!--                    android:id="@+id/button_item_edit"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginLeft="16dp"-->
-<!--                    android:layout_marginRight="16dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:backgroundTint="@color/custom_blue"-->
-<!--                    android:text="Edit Garage" />-->
+                <Button
+                    android:id="@+id/button_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:backgroundTint="@color/custom_blue"
+                    android:text="Edit Garage" />
 
             </LinearLayout>
 

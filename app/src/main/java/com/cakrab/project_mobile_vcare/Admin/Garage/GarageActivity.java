@@ -1,7 +1,9 @@
 package com.cakrab.project_mobile_vcare.Admin.Garage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -10,8 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cakrab.project_mobile_vcare.Adapter.GarageAdapter;
 import com.cakrab.project_mobile_vcare.Model.Garage;
 import com.cakrab.project_mobile_vcare.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GarageActivity extends AppCompatActivity {
 
@@ -19,6 +27,7 @@ public class GarageActivity extends AppCompatActivity {
     ArrayList<Garage> garageList;
     GarageAdapter garageAdapter;
     Button buttonAddGarage;
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,39 +35,41 @@ public class GarageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_garage);
 
         buttonAddGarage = findViewById(R.id.button_add_garage);
-//        garageRV = findViewById(R.id.garageRV);
-//        garageList = new ArrayList<>();
-//        garageAdapter = new GarageAdapter(garageList, getApplicationContext());
-//        garageRV.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
-//        garageRV.setAdapter(garageAdapter);
-//
-//        garageList.add(new Garage(
-//                "Suzuki",
-//                "20 Cabang"
-//        ));
-//        garageList.add(new Garage(
-//                "Honda",
-//                "15 Cabang"
-//        ));
-//        garageList.add(new Garage(
-//                "Kawasaki",
-//                "23 Cabang"
-//        ));
-//        garageList.add(new Garage(
-//                "Bengkel Abadi",
-//                "20 Cabang"
-//        ));
-//        garageList.add(new Garage(
-//                "Toyota",
-//                "54 Cabang"
-//        ));
-//        garageList.add(new Garage(
-//                "Bengkel Indah",
-//                "2 Cabang"
-//        ));
-//        garageList.add(new Garage(
-//                "Lexus",
-//                "3 Cabang"
-//        ));
+        garageRV = findViewById(R.id.garageRV);
+        db = FirebaseFirestore.getInstance();
+
+        garageList = new ArrayList<>();
+        garageAdapter = new GarageAdapter(garageList, GarageActivity.this);
+        garageRV.setLayoutManager(new GridLayoutManager(GarageActivity.this, 2));
+        garageRV.setAdapter(garageAdapter);
+
+        // Retrieve Data from Firestore
+        db.collection("garage")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot documentSnapshot : list) {
+                                Garage garage = documentSnapshot.toObject(Garage.class);
+                                garage.setId(documentSnapshot.getId());
+                                garageList.add(garage);
+                            }
+                            garageAdapter.notifyDataSetChanged();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(Exception e) {
+                        Toast.makeText(getApplicationContext(), "Fail to get data", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        buttonAddGarage.setOnClickListener(view -> {
+            Intent i = new Intent(GarageActivity.this, CreateGarageActivity.class);
+            startActivity(i);
+        });
     }
 }

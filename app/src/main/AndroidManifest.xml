@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Mobile_VCare">
+        <activity android:name=".AboutActivity"></activity>
+        <activity
+            android:name=".Admin.Garage.EditGarageActivity"
+            android:parentActivityName=".Admin.Garage.GarageActivity" />
         <activity
             android:name=".Admin.Garage.CreateGarageActivity"
             android:parentActivityName=".Admin.Garage.GarageActivity" />
@@ -17,7 +21,7 @@
             android:parentActivityName=".Admin.AdminActivity" />
         <activity
             android:name=".Admin.News.EditNewsActivity"
-            android:parentActivityName=".Admin.News.NewsActivity"/>
+            android:parentActivityName=".Admin.News.NewsActivity" />
         <activity
             android:name=".Admin.News.CreateNewsActivity"
             android:parentActivityName=".Admin.News.NewsActivity" />

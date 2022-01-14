@@ -10,8 +10,8 @@
         android:id="@+id/header_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@color/custom_blue"
+        android:orientation="horizontal"
         android:padding="16dp">
 
         <TextView
@@ -47,9 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:textColor="@color/custom_black"
             android:fontFamily="@font/poppinsreguler"
             android:text=""
+            android:textColor="@color/custom_black"
             android:textSize="16sp" />
 
         <TextView
@@ -67,8 +67,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/poppinsreguler"
-            android:textColor="@color/custom_black"
             android:text=""
+            android:textColor="@color/custom_black"
             android:textSize="16sp" />
 
         <TextView
@@ -86,8 +86,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/poppinsreguler"
-            android:textColor="@color/custom_black"
             android:text="**********"
+            android:textColor="@color/custom_black"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -99,8 +99,42 @@
                 android:id="@+id/btnEditProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/custom_blue"
                 android:text="Edit Profile" />
+
+            <View
+                android:id="@+id/divider_section"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/content_section"
+                android:layout_marginBottom="16dp"
+                android:background="@color/custom_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppinsreguler"
+                android:text="Other Information"
+                android:textColor="@color/custom_black"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/btnAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/custom_blue"
+                android:text="About Us"
+                android:textColor="@color/custom_white" />
+
+            <Button
+                android:id="@+id/btnFAQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/custom_blue"
+                android:text="Frequently Asked Question"
+                android:textColor="@color/custom_white" />
 
             <Button
                 android:id="@+id/btnLogout"

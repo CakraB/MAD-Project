@@ -3,89 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     android:padding="24dp"
     tools:context=".EditProfileActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/text_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:gravity="center"
+        android:text="Edit Profile"
+        android:textColor="@color/custom_black"
+        android:textSize="32sp" />
 
-        <TextView
-            android:id="@+id/text_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/poppinssemibold"
-            android:gravity="center"
-            android:text="Edit Profile"
-            android:textColor="@color/custom_black"
-            android:textSize="32sp" />
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/custom_gray"
+        android:fontFamily="@font/poppinsreguler"
+        android:hint="Fullname"
+        android:inputType="text"
+        android:padding="16dp"
+        android:textColor="@color/custom_black" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/custom_gray"
-            android:fontFamily="@font/poppinssemibold"
-            android:text="Full Name"
-            android:textColor="@color/custom_black"
-            android:textSize="16dp" />
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/custom_gray"
+        android:fontFamily="@font/poppinsreguler"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:textColor="@color/custom_black" />
 
-        <EditText
-            android:id="@+id/inputFullname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/custom_gray"
-            android:text=""
-            android:textColor="@color/custom_black" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/poppinssemibold"
-            android:text="Email"
-            android:textColor="@color/custom_black"
-            android:textSize="16dp" />
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/custom_gray"
+        android:fontFamily="@font/poppinsreguler"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="@color/custom_black" />
 
-        <EditText
-            android:id="@+id/inputEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/custom_gray"
-            android:text=""
-            android:textColor="@color/custom_black" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppinssemibold"
-            android:text="Password"
-            android:textColor="@color/custom_black"
-            android:textSize="16dp" />
-
-        <EditText
-            android:id="@+id/inputPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/custom_gray"
-            android:text=""
-            android:textColor="@color/custom_black" />
-
-        <Button
-            android:id="@+id/btnEditProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/custom_blue"
-            android:text="Save" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/custom_blue"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Save Changes"
+        android:textColor="@color/custom_white" />
 
 </LinearLayout>
 

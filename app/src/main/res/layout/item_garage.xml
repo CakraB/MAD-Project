@@ -13,7 +13,7 @@
         <ImageView
             android:id="@+id/image_garage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
             android:scaleType="fitXY"
             android:src="@drawable/ic_launcher_background" />
 
@@ -37,13 +37,13 @@
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/text_garage_branch"
+                android:id="@+id/text_garage_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:fontFamily="@font/poppinsreguler"
                 android:maxLines="2"
-                android:text="Cabang"
+                android:text="Deskirpsi Bengkel dan Cabangnya"
                 android:textColor="@color/custom_black"
                 android:textSize="12dp" />
 

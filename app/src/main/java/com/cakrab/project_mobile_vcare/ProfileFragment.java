@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 public class ProfileFragment extends Fragment {
 
     TextView textProfileName, textProfileEmail;
-    Button btnEditProfile, btnLogout;
+    Button buttonEditProfile, buttonAbout, buttonFAQ, buttonLogout;
     SharedPreferences sharedPreferences;
 
     @Nullable
@@ -37,20 +37,28 @@ public class ProfileFragment extends Fragment {
 
         textProfileName = view.findViewById(R.id.text_profile_name);
         textProfileEmail = view.findViewById(R.id.text_profile_email);
-        btnEditProfile = view.findViewById(R.id.btnEditProfile);
-        btnLogout = view.findViewById(R.id.btnLogout);
+        buttonEditProfile = view.findViewById(R.id.btnEditProfile);
+        buttonAbout = view.findViewById(R.id.btnAbout);
+        buttonFAQ = view.findViewById(R.id.btnFAQ);
+        buttonLogout = view.findViewById(R.id.btnLogout);
 
         sharedPreferences = this.getActivity().getSharedPreferences("REMEMBER", Context.MODE_PRIVATE);
         String getData = sharedPreferences.getString("EMAIL", "");
         textProfileName.setText(getData);
         textProfileEmail.setText(getData);
 
-        btnEditProfile.setOnClickListener(viewProfile -> {
-            Intent intent = new Intent(getContext(), EditProfileActivity.class);
-            startActivity(intent);
+        buttonEditProfile.setOnClickListener(viewProfile -> {
+            Intent i = new Intent(getContext(), EditProfileActivity.class);
+            i.putExtra("EMAIL", getData);
+            startActivity(i);
         });
 
-        btnLogout.setOnClickListener(viewLogout -> {
+        buttonAbout.setOnClickListener(viewAbout -> {
+            Intent i = new Intent(getContext(), AboutActivity.class);
+            startActivity(i);
+        });
+
+        buttonLogout.setOnClickListener(viewLogout -> {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear();
             editor.apply();

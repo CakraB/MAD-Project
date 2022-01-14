@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp"
-    tools:context=".Admin.News.EditNewsActivity">
+    tools:context=".Admin.Garage.EditGarageActivity">
 
     <TextView
         android:id="@+id/text_title"
@@ -15,37 +15,37 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppinssemibold"
         android:gravity="center"
-        android:text="Edit News"
+        android:text="Edit Garage"
         android:textColor="@color/custom_black"
         android:textSize="32sp" />
 
     <EditText
-        android:id="@+id/edit_news_title"
+        android:id="@+id/edit_garage_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_gray"
         android:fontFamily="@font/poppinsreguler"
-        android:hint="Title"
+        android:hint="Garage Name"
         android:inputType="text"
         android:padding="16dp"
         android:textColor="@color/custom_black" />
 
     <EditText
-        android:id="@+id/edit_news_desc"
+        android:id="@+id/edit_garage_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_gray"
         android:fontFamily="@font/poppinsreguler"
-        android:hint="Description"
+        android:hint="Garage Information"
         android:inputType="textMultiLine"
         android:padding="16dp"
         android:textColor="@color/custom_black" />
 
 
     <EditText
-        android:id="@+id/edit_news_image"
+        android:id="@+id/edit_garage_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -57,22 +57,22 @@
         android:textColor="@color/custom_black" />
 
     <Button
-        android:id="@+id/button_update_news"
+        android:id="@+id/button_update_garage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/custom_blue"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Update News"
+        android:text="Update Garage"
         android:textColor="@color/custom_white" />
 
     <Button
-        android:id="@+id/button_delete_news"
+        android:id="@+id/button_delete_garage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_white"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Delete News"
+        android:text="Delete Garage"
         android:textColor="@color/custom_black" />
 
 </LinearLayout>
