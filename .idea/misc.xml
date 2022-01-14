@@ -7,7 +7,7 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_admin.xml" value="0.18704710144927536" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_detail_garage.xml" value="0.18704710144927536" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_detail_news.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_editprofile.xml" value="0.121875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_editprofile.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_faq.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_garage.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_home.xml" value="0.176" />
@@ -17,6 +17,7 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_profile.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/fragment_editprofile.xml" value="0.1265625" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/fragment_forum.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/fragment_home.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/fragment_news.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/fragment_profile.xml" value="0.176" />

@@ -53,15 +53,15 @@ public class DetailNewsActivity extends AppCompatActivity {
         if (getData.equals("admin@gmail.com")) {
             buttonEdit.setVisibility(View.VISIBLE);
 
-            buttonEdit.setOnClickListener(view -> {
-                Intent i = new Intent(this, EditNewsActivity.class);
-                i.putExtra("ID", getNewsId);
-                i.putExtra("NAME", getNewsName);
-                i.putExtra("DESC", getNewsDesc);
-                i.putExtra("IMAGE", getNewsImage);
-                startActivity(i);
-            });
-        } else {
+        } else {            buttonEdit.setOnClickListener(view -> {
+            Intent i = new Intent(this, EditNewsActivity.class);
+            i.putExtra("ID", getNewsId);
+            i.putExtra("NAME", getNewsName);
+            i.putExtra("DESC", getNewsDesc);
+            i.putExtra("IMAGE", getNewsImage);
+            startActivity(i);
+        });
+
             buttonEdit.setVisibility(View.INVISIBLE);
         }
     }

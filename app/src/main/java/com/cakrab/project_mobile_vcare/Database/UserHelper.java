@@ -44,6 +44,17 @@ public class UserHelper {
         return queryResult > 0;
     }
 
+    public boolean updateProfile(String id, String name, String email, String password) {
+        sqLiteDatabase = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("email", email);
+        contentValues.put("password", password);
+
+        int result = sqLiteDatabase.update(databaseHelper.TABLE_USER, contentValues, "id = ?", new String[]{id});
+        return (result > 0) ? true : false;
+    }
+
     public boolean deleteUser(String id) {
         sqLiteDatabase = databaseHelper.getWritableDatabase();
         long queryResult = sqLiteDatabase.delete(databaseHelper.TABLE_USER, "id = ?", new String[]{id});
