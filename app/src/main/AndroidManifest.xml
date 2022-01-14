@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Mobile_VCare">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBDgYfMd6BRJkAHR7P0YCX1XTKGyQw7-Xo" />
+
         <activity
             android:name=".FaqActivity"
             android:exported="false" />
