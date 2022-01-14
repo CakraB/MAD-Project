@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Mobile_VCare">
-        <activity android:name=".AboutActivity"></activity>
+        <activity
+            android:name=".FaqActivity"
+            android:exported="false" />
+        <activity android:name=".AboutActivity" />
         <activity
             android:name=".Admin.Garage.EditGarageActivity"
             android:parentActivityName=".Admin.Garage.GarageActivity" />
