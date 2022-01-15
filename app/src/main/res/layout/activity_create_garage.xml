@@ -39,7 +39,7 @@
         android:backgroundTint="@color/custom_gray"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Garage Information"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:padding="16dp"
         android:textColor="@color/custom_black" />
 
@@ -63,7 +63,7 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_blue"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Add Garage"
+        android:text="Submit"
         android:textColor="@color/white" />
 
 </LinearLayout>

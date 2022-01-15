@@ -39,7 +39,7 @@
         android:backgroundTint="@color/custom_gray"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Description"
-        android:inputType="textMultiLine"
+        android:inputType="text"
         android:padding="16dp"
         android:textColor="@color/custom_black" />
 

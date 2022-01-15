@@ -39,10 +39,9 @@
         android:backgroundTint="@color/custom_gray"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Description"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:padding="16dp"
         android:textColor="@color/custom_black" />
-
 
     <EditText
         android:id="@+id/edit_news_image"
@@ -63,7 +62,7 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_blue"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Add News"
+        android:text="Submit"
         android:textColor="@color/white" />
 
 </LinearLayout>

@@ -21,7 +21,6 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         init();
-
     }
 
     public void init() {
@@ -32,11 +31,9 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         map = googleMap;
-
         LatLng BnKmg = new LatLng(-6.201733, 106.7815);
         map.addMarker(new MarkerOptions().position(BnKmg).title("VCare"));
         map.moveCamera(CameraUpdateFactory.newLatLng(BnKmg));
         map.animateCamera(CameraUpdateFactory.zoomTo(15));
-
     }
 }
