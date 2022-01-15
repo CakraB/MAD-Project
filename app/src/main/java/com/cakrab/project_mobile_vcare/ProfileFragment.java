@@ -58,6 +58,11 @@ public class ProfileFragment extends Fragment {
             startActivity(i);
         });
 
+        buttonFAQ.setOnClickListener(viewAbout -> {
+            Intent i = new Intent(getContext(), FaqActivity.class);
+            startActivity(i);
+        });
+
         buttonLogout.setOnClickListener(viewLogout -> {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear();

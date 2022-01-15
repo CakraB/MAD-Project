@@ -16,8 +16,10 @@
 
         <activity
             android:name=".FaqActivity"
-            android:exported="false" />
-        <activity android:name=".AboutActivity" />
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AboutActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Admin.Garage.EditGarageActivity"
             android:parentActivityName=".Admin.Garage.GarageActivity" />

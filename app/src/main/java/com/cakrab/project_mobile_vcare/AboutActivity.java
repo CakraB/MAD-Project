@@ -1,9 +1,9 @@
 package com.cakrab.project_mobile_vcare;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -24,7 +24,7 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
 
     }
 
-    public void init () {
+    public void init() {
         SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         supportMapFragment.getMapAsync(this::onMapReady);
     }

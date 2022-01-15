@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AboutActivity">
 
     <TextView
-        android:id="@+id/txt_title"
+        android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/poppinssemibold"
+        android:gravity="center"
         android:text="About Us"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/custom_black"
         android:textSize="24sp" />
 
     <TextView
@@ -24,18 +24,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|end"
         android:layout_marginBottom="20dp"
-        android:layout_margin="10dp"
         android:fontFamily="@font/poppinsreguler"
         android:text="VCare is a application that provides ordering and vehicle washing services. Our application also provides articles about automotive that can be read by users."
-        android:textColor="@color/black"
+        android:textColor="@color/custom_black"
         android:textSize="16sp" />
 
-
     <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
         android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

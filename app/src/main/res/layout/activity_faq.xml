@@ -1,78 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".FaqActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:fontFamily="@font/poppinssemibold"
         android:text="Frequently Asked Question"
-        android:layout_marginTop="20dp"
-        android:textSize="20dp"/>
+        android:textAlignment="center"
+        android:textColor="@color/custom_black"
+        android:textSize="24sp" />
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="vertical">
-    <TextView
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1. Apa itu V-Care?"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"/>
-    <TextView
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="V-Care adalah aplikasi yang menyediakan ruang bagi bengkel untuk mengiklankan diri, serta terdapatv reward bagi membernya."
-        android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="1. Apa itu V-Care?"
+            android:textColor="@color/custom_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppinsreguler"
+            android:text="V-Care adalah aplikasi yang menyediakan ruang bagi bengkel untuk mengiklankan diri, serta terdapat reward bagi membernya."
+            android:textColor="@color/custom_black"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:fontFamily="@font/poppinssemibold"
             android:text="2. Apa reward yang bisa didapatkan member?"
-            android:layout_marginLeft="10dp"/>
+            android:textColor="@color/custom_black"
+            android:textSize="16sp" />
+
         <TextView
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppinsreguler"
             android:text="Reward yang bisa didapatkan oleh member adalah kupon diskon yang bisa digunakan jika Anda ingin ke bengkel yang bekerja sama dengan V-Care. Kemudian, terdapat media yang bisa menjadi ruang diskusi oleh member untuk berdiskusi tentang otomotif."
-            android:layout_marginLeft="10dp"/>
+            android:textColor="@color/custom_black"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinssemibold"
             android:text="3. Bagaimana cara menggunakan kupon diskon?"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"/>
+            android:textColor="@color/custom_black"
+            android:textSize="16sp" />
+
         <TextView
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppinsreguler"
             android:text="Kupon dapat diclaim dengan cara membuka profile bengkel yang bersangkutan, kemudian kupon bisa langsung diclaim."
-            android:layout_marginLeft="10dp"/>
+            android:textColor="@color/custom_black"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
