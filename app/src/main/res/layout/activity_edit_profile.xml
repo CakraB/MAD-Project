@@ -25,6 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_gray"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Fullname"
         android:inputType="text"
@@ -37,12 +39,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_gray"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="16dp"
         android:textColor="@color/custom_black" />
-
 
     <EditText
         android:id="@+id/edit_password"
@@ -50,6 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_gray"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Password"
         android:inputType="textPassword"

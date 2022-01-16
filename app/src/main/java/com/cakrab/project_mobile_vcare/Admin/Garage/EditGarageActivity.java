@@ -7,18 +7,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cakrab.project_mobile_vcare.Model.Garage;
 import com.cakrab.project_mobile_vcare.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import org.jetbrains.annotations.NotNull;
 
 public class EditGarageActivity extends AppCompatActivity {
 
@@ -70,9 +63,7 @@ public class EditGarageActivity extends AppCompatActivity {
             }
         });
 
-        buttonDeleteGarage.setOnClickListener(view -> {
-            deleteGarage(getGarageId);
-        });
+        buttonDeleteGarage.setOnClickListener(view -> deleteGarage(getGarageId));
 
     }
 
@@ -81,36 +72,25 @@ public class EditGarageActivity extends AppCompatActivity {
         db.collection("garage").
                 document(garageId).
                 set(updateGarage).
-                addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(EditGarageActivity.this, "Garage has been updated..", Toast.LENGTH_SHORT).show();
-                        Intent back = new Intent(getApplicationContext(), GarageActivity.class);
-                        startActivity(back);
-                    }
+                addOnSuccessListener(unused -> {
+                    Toast.makeText(EditGarageActivity.this, "Garage has been updated..", Toast.LENGTH_SHORT).show();
+                    Intent back = new Intent(getApplicationContext(), GarageActivity.class);
+                    startActivity(back);
                 }).
-                addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull @NotNull Exception e) {
-                        Toast.makeText(EditGarageActivity.this, "Fail to update the data..", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                addOnFailureListener(e -> Toast.makeText(EditGarageActivity.this, "Fail to update the data..", Toast.LENGTH_SHORT).show());
     }
 
     private void deleteGarage(String garageId) {
         db.collection("garage").
                 document(garageId).
                 delete().
-                addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull @NotNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(EditGarageActivity.this, "Garage has been deleted from Database.", Toast.LENGTH_SHORT).show();
-                            Intent back = new Intent(getApplicationContext(), GarageActivity.class);
-                            startActivity(back);
-                        } else {
-                            Toast.makeText(EditGarageActivity.this, "Fail to delete the garage. ", Toast.LENGTH_SHORT).show();
-                        }
+                addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(EditGarageActivity.this, "Garage has been deleted from Database.", Toast.LENGTH_SHORT).show();
+                        Intent back = new Intent(getApplicationContext(), GarageActivity.class);
+                        startActivity(back);
+                    } else {
+                        Toast.makeText(EditGarageActivity.this, "Fail to delete the garage. ", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

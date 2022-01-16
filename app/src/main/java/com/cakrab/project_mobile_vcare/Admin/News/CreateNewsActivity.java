@@ -7,23 +7,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cakrab.project_mobile_vcare.Adapter.NewsAdapter;
 import com.cakrab.project_mobile_vcare.Model.News;
 import com.cakrab.project_mobile_vcare.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import org.jetbrains.annotations.NotNull;
 
 public class CreateNewsActivity extends AppCompatActivity {
 
-    NewsAdapter newsAdapter;
     EditText editNewsTitle, editNewsDesc, editNewsImage;
     Button buttonAddNews;
     FirebaseFirestore db;
@@ -60,44 +52,15 @@ public class CreateNewsActivity extends AppCompatActivity {
                 addNews(newsTitle, newsDesc, newsImage);
             }
         });
-
-        // Cara Aslab
-//        buttonAddNews.setOnClickListener(view -> {
-//            String newsTitle = editNewsTitle.getText().toString();
-//            String newsDesc = (editNewsDesc.getText().toString().isEmpty()) ? null : editNewsDesc.getText().toString();
-//            String newsImage = editNewsImage.getText().toString();
-//
-//            Map<String, Object> newsData = new HashMap<>();
-//            newsData.put("title", newsTitle);
-//            newsData.put("description", newsDesc);
-//            newsData.put("image", newsImage);
-//            // Add to Adapter for Arraylist
-////            newsAdapter.getList().add(new News(newsTitle, newsDesc, newsImage));
-////            newsAdapter.notifyDataSetChanged();
-//            // Add news to Firebase Firestore
-//            db.collection("news").document(newsTitle).set(newsData);
-//            Toast.makeText(CreateNewsActivity.this, "News Create Successfully", Toast.LENGTH_SHORT).show();
-//
-//            Intent back = new Intent(this, NewsActivity.class);
-//            startActivity(back);
-//        });
     }
 
     private void addNews(String newsTitle, String newsDesc, String newsImage) {
         CollectionReference dbNews = db.collection("news");
         News news = new News(newsTitle, newsDesc, newsImage);
-        dbNews.add(news).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(getApplicationContext(), "Your News has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
-                Intent back = new Intent(getApplicationContext(), NewsActivity.class);
-                startActivity(back);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull @NotNull Exception e) {
-                Toast.makeText(getApplicationContext(), "Fail to add news \n" + e, Toast.LENGTH_SHORT).show();
-            }
-        });
+        dbNews.add(news).addOnSuccessListener(documentReference -> {
+            Toast.makeText(getApplicationContext(), "Your News has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
+            Intent back = new Intent(getApplicationContext(), NewsActivity.class);
+            startActivity(back);
+        }).addOnFailureListener(e -> Toast.makeText(getApplicationContext(), "Fail to add news \n" + e, Toast.LENGTH_SHORT).show());
     }
 }

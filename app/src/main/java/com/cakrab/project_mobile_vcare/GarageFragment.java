@@ -14,11 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cakrab.project_mobile_vcare.Adapter.GarageAdapter;
 import com.cakrab.project_mobile_vcare.Model.Garage;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -51,62 +48,20 @@ public class GarageFragment extends Fragment {
         // Retrieve Data from Firestore
         db.collection("garage")
                 .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot documentSnapshot : list) {
-                                Garage garage = documentSnapshot.toObject(Garage.class);
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                        for (DocumentSnapshot documentSnapshot : list) {
+                            Garage garage = documentSnapshot.toObject(Garage.class);
+                            if (garage != null) {
                                 garage.setId(documentSnapshot.getId());
-                                garageList.add(garage);
                             }
-                            garageAdapter.notifyDataSetChanged();
+                            garageList.add(garage);
                         }
+                        garageAdapter.notifyDataSetChanged();
                     }
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(Exception e) {
-                        Toast.makeText(getContext(), "Fail to get data", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-//        garageArrayList.add(new Garage(
-//                "Suzuki",
-//                "20 Cabang",
-//                "Logo Suzuki"
-//        ));
-//        garageArrayList.add(new Garage(
-//                "Honda",
-//                "15 Cabang",
-//                "Logo Honda"
-//        ));
-//        garageArrayList.add(new Garage(
-//                "Kawasaki",
-//                "23 Cabang",
-//                "Logo Kawasaki"
-//        ));
-//        garageArrayList.add(new Garage(
-//                "Bengkel Abadi",
-//                "20 Cabang",
-//                "Logo"
-//        ));
-//        garageArrayList.add(new Garage(
-//                "Toyota",
-//                "54 Cabang",
-//                "Logo"
-//        ));
-//        garageArrayList.add(new Garage(
-//                "Bengkel Indah",
-//                "2 Cabang",
-//                "Logo"
-//        ));
-//        garageArrayList.add(new Garage(
-//                "Lexus",
-//                "3 Cabang",
-//                "Logo"
-//        ));
+                .addOnFailureListener(e -> Toast.makeText(getContext(), "Fail to get data", Toast.LENGTH_SHORT).show());
     }
 
 }

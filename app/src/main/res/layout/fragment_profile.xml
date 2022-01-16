@@ -107,7 +107,6 @@
                 android:id="@+id/divider_section"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/content_section"
                 android:layout_marginBottom="16dp"
                 android:background="@color/custom_gray" />
 

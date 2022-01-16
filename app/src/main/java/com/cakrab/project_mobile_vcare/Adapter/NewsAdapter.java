@@ -22,29 +22,13 @@ import java.util.ArrayList;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
-    private ArrayList<News> newsList;
-    private Context context;
+    private final ArrayList<News> newsList;
+    private final Context context;
 
     public NewsAdapter(Context context, ArrayList<News> newsList) {
         this.context = context;
         this.newsList = newsList;
     }
-
-    // Cara Aslab
-//    private List<News> newsList;
-//    private Context context;
-//
-//    public NewsAdapter(Context context) {
-//        this.context = context;
-//    }
-//
-//    public void setNewsArrayLists(List<News> newsList) {
-//        this.newsList = newsList;
-//    }
-//
-//    public List<News> getNewsList() {
-//        return newsList;
-//    }
 
     @NonNull
     @Override
@@ -58,7 +42,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         News news = newsList.get(position);
         holder.textName.setText(news.getNewsName());
         holder.textDesc.setText(news.getNewsDesc());
-        // Convert Image Link To Image with Picasso Libraru
+        // Convert Image Link To Image with Picasso Library
         if (news.getNewsImage() != null) {
             Picasso.get().load(news.getNewsImage()).into(holder.imageView);
         } else {
@@ -81,7 +65,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         return newsList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textName, textDesc;
         ImageView imageView;

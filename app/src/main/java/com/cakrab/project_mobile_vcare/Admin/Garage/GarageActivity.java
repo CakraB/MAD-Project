@@ -12,11 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cakrab.project_mobile_vcare.Adapter.GarageAdapter;
 import com.cakrab.project_mobile_vcare.Model.Garage;
 import com.cakrab.project_mobile_vcare.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,26 +43,20 @@ public class GarageActivity extends AppCompatActivity {
         // Retrieve Data from Firestore
         db.collection("garage")
                 .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot documentSnapshot : list) {
-                                Garage garage = documentSnapshot.toObject(Garage.class);
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                        for (DocumentSnapshot documentSnapshot : list) {
+                            Garage garage = documentSnapshot.toObject(Garage.class);
+                            if (garage != null) {
                                 garage.setId(documentSnapshot.getId());
-                                garageList.add(garage);
                             }
-                            garageAdapter.notifyDataSetChanged();
+                            garageList.add(garage);
                         }
+                        garageAdapter.notifyDataSetChanged();
                     }
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(Exception e) {
-                        Toast.makeText(getApplicationContext(), "Fail to get data", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                .addOnFailureListener(e -> Toast.makeText(getApplicationContext(), "Fail to get data", Toast.LENGTH_SHORT).show());
 
         buttonAddGarage.setOnClickListener(view -> {
             Intent i = new Intent(GarageActivity.this, CreateGarageActivity.class);

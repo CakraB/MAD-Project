@@ -30,8 +30,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:maxLines="2"
                 android:fontFamily="@font/poppinssemibold"
+                android:maxLines="2"
                 android:text="Judul Berita"
                 android:textColor="@color/custom_black"
                 android:textSize="16dp" />
@@ -47,14 +47,14 @@
                 android:textColor="@color/custom_black"
                 android:textSize="12dp" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/text_content_date"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:fontFamily="@font/poppinsreguler"-->
-<!--                android:paddingTop="8dp"-->
-<!--                android:text="Waktu Berita"-->
-<!--                android:textSize="12dp" />-->
+            <!--            <TextView-->
+            <!--                android:id="@+id/text_content_date"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:fontFamily="@font/poppinsreguler"-->
+            <!--                android:paddingTop="8dp"-->
+            <!--                android:text="Waktu Berita"-->
+            <!--                android:textSize="12dp" />-->
         </LinearLayout>
 
     </RelativeLayout>

@@ -8,18 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cakrab.project_mobile_vcare.Model.News;
 import com.cakrab.project_mobile_vcare.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import org.jetbrains.annotations.NotNull;
 
 public class EditNewsActivity extends AppCompatActivity {
 
@@ -76,9 +69,7 @@ public class EditNewsActivity extends AppCompatActivity {
             }
         });
 
-        buttonDeleteNews.setOnClickListener(view -> {
-            deleteNews(getNewsId);
-        });
+        buttonDeleteNews.setOnClickListener(view -> deleteNews(getNewsId));
 
     }
 
@@ -87,36 +78,25 @@ public class EditNewsActivity extends AppCompatActivity {
         db.collection("news").
                 document(newsId).
                 set(updateNews).
-                addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(EditNewsActivity.this, "News has been updated..", Toast.LENGTH_SHORT).show();
-                        Intent back = new Intent(getApplicationContext(), NewsActivity.class);
-                        startActivity(back);
-                    }
+                addOnSuccessListener(unused -> {
+                    Toast.makeText(EditNewsActivity.this, "News has been updated..", Toast.LENGTH_SHORT).show();
+                    Intent back = new Intent(getApplicationContext(), NewsActivity.class);
+                    startActivity(back);
                 }).
-                addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull @NotNull Exception e) {
-                        Toast.makeText(EditNewsActivity.this, "Fail to update the data..", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                addOnFailureListener(e -> Toast.makeText(EditNewsActivity.this, "Fail to update the data..", Toast.LENGTH_SHORT).show());
     }
 
     private void deleteNews(String newsId) {
         db.collection("news").
                 document(newsId).
                 delete().
-                addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull @NotNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(EditNewsActivity.this, "News has been deleted from Database.", Toast.LENGTH_SHORT).show();
-                            Intent back = new Intent(getApplicationContext(), NewsActivity.class);
-                            startActivity(back);
-                        } else {
-                            Toast.makeText(EditNewsActivity.this, "Fail to delete the news. ", Toast.LENGTH_SHORT).show();
-                        }
+                addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(EditNewsActivity.this, "News has been deleted from Database.", Toast.LENGTH_SHORT).show();
+                        Intent back = new Intent(getApplicationContext(), NewsActivity.class);
+                        startActivity(back);
+                    } else {
+                        Toast.makeText(EditNewsActivity.this, "Fail to delete the news. ", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

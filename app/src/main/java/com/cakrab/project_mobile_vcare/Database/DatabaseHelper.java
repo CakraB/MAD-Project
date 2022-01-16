@@ -13,10 +13,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public final String TABLE_USER = "users";
 
     // User Table Column
-    private static final String USER_ID = "id";
-    private static final String USER_NAME = "name";
-    private static final String USER_EMAIL = "email";
-    private static final String USER_PASSWORD = "password";
+    public final String USER_ID = "id";
+    public final String USER_NAME = "name";
+    public final String USER_EMAIL = "email";
+    public final String USER_PASSWORD = "password";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

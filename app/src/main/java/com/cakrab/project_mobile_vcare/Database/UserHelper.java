@@ -24,9 +24,9 @@ public class UserHelper {
         return queryResult != -1;
     }
 
-    public boolean readUser (String email, String password) {
+    public boolean readUser(String email, String password) {
         sqLiteDatabase = databaseHelper.getReadableDatabase();
-        String sql = "SELECT * FROM " + databaseHelper.TABLE_USER + " WHERE email= ?"  + " AND password= ?" ;
+        String sql = "SELECT * FROM " + databaseHelper.TABLE_USER + " WHERE email= ?" + " AND password= ?";
         Cursor cursor = sqLiteDatabase.rawQuery(sql, new String[]{email, password});
         cursor.moveToLast();
         return cursor.getCount() > 0;
@@ -42,17 +42,6 @@ public class UserHelper {
         long queryResult = sqLiteDatabase.update(databaseHelper.TABLE_USER, contentValues, "id = ?", new String[]{id});
         // If Something Wrong return false
         return queryResult > 0;
-    }
-
-    public boolean updateProfile(String id, String name, String email, String password) {
-        sqLiteDatabase = databaseHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("email", email);
-        contentValues.put("password", password);
-
-        int result = sqLiteDatabase.update(databaseHelper.TABLE_USER, contentValues, "id = ?", new String[]{id});
-        return (result > 0) ? true : false;
     }
 
     public boolean deleteUser(String id) {

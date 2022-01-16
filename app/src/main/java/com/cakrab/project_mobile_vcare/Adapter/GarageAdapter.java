@@ -41,7 +41,7 @@ public class GarageAdapter extends RecyclerView.Adapter<GarageAdapter.GarageView
         Garage garage = garageList.get(position);
         holder.garageName.setText(garage.getGarageName());
         holder.garageDesc.setText(garage.getGarageDesc());
-        // Convert Image Link To Image with Picasso Libraru
+        // Convert Image Link To Image with Picasso Library
         if (garage.getGarageImage() != null) {
             Picasso.get().load(garage.getGarageImage()).into(holder.garageImage);
         } else {

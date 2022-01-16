@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
@@ -29,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
         if (navId == R.id.nav_home) {
             selectedFragment = new HomeFragment();
         }
-//        if (navId == R.id.nav_forum) {
-//            selectedFragment = new ForumFragment();
-//        }
         if (navId == R.id.nav_garage) {
             selectedFragment = new GarageFragment();
         }

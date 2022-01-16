@@ -25,6 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_gray"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Fullname"
         android:inputType="text"
@@ -37,6 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_gray"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -49,6 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_gray"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Password"
         android:inputType="textPassword"
@@ -61,6 +67,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/custom_gray"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/poppinsreguler"
         android:hint="Password Confirmation"
         android:inputType="textPassword"
@@ -88,7 +96,7 @@
             android:fontFamily="@font/poppinsreguler"
             android:paddingRight="4dp"
             android:text="Already has an account?"
-            android:textColor="@color/custom_gray" />
+            android:textColor="@color/custom_black" />
 
         <TextView
             android:id="@+id/text_login_here"

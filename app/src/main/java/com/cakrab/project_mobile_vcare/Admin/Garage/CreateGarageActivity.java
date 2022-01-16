@@ -7,23 +7,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cakrab.project_mobile_vcare.Adapter.GarageAdapter;
 import com.cakrab.project_mobile_vcare.Model.Garage;
 import com.cakrab.project_mobile_vcare.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import org.jetbrains.annotations.NotNull;
 
 public class CreateGarageActivity extends AppCompatActivity {
 
-    GarageAdapter garageAdapter;
     EditText editGarageName, editGarageDesc, editGarageImage;
     Button buttonAddGarage;
     FirebaseFirestore db;
@@ -65,18 +57,10 @@ public class CreateGarageActivity extends AppCompatActivity {
     private void addGarage(String garageName, String garageDesc, String garageImage) {
         CollectionReference dbGarage = db.collection("garage");
         Garage garage = new Garage(garageName, garageDesc, garageImage);
-        dbGarage.add(garage).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(getApplicationContext(), "Your Garage has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
-                Intent back = new Intent(getApplicationContext(), GarageActivity.class);
-                startActivity(back);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull @NotNull Exception e) {
-                Toast.makeText(getApplicationContext(), "Fail to add garage \n" + e, Toast.LENGTH_SHORT).show();
-            }
-        });
+        dbGarage.add(garage).addOnSuccessListener(documentReference -> {
+            Toast.makeText(getApplicationContext(), "Your Garage has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
+            Intent back = new Intent(getApplicationContext(), GarageActivity.class);
+            startActivity(back);
+        }).addOnFailureListener(e -> Toast.makeText(getApplicationContext(), "Fail to add garage \n" + e, Toast.LENGTH_SHORT).show());
     }
 }

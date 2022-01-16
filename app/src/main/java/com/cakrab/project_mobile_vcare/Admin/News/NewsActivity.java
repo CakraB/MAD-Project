@@ -3,7 +3,6 @@ package com.cakrab.project_mobile_vcare.Admin.News;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cakrab.project_mobile_vcare.Adapter.NewsAdapter;
 import com.cakrab.project_mobile_vcare.Model.News;
 import com.cakrab.project_mobile_vcare.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +25,6 @@ public class NewsActivity extends AppCompatActivity {
     NewsAdapter newsAdapter;
     Button buttonAddNews;
     FirebaseFirestore db;
-    TextView newsCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,26 +44,20 @@ public class NewsActivity extends AppCompatActivity {
         // Retrieve Data from Firestore
         db.collection("news")
                 .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot documentSnapshot : list) {
-                                News news = documentSnapshot.toObject(News.class);
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                        for (DocumentSnapshot documentSnapshot : list) {
+                            News news = documentSnapshot.toObject(News.class);
+                            if (news != null) {
                                 news.setId(documentSnapshot.getId());
-                                newsList.add(news);
                             }
-                            newsAdapter.notifyDataSetChanged();
+                            newsList.add(news);
                         }
+                        newsAdapter.notifyDataSetChanged();
                     }
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(Exception e) {
-                        Toast.makeText(getApplicationContext(), "Fail to get data", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                .addOnFailureListener(e -> Toast.makeText(getApplicationContext(), "Fail to get data", Toast.LENGTH_SHORT).show());
 
         buttonAddNews.setOnClickListener(view -> {
             Intent i = new Intent(NewsActivity.this, CreateNewsActivity.class);

@@ -29,15 +29,6 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!--                <TextView-->
-                <!--                    android:id="@+id/text_content_date"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:fontFamily="@font/poppinsreguler"-->
-                <!--                    android:paddingTop="8dp"-->
-                <!--                    android:text="Waktu Berita"-->
-                <!--                    android:textSize="12dp" />-->
-
                 <TextView
                     android:id="@+id/text_garage_name"
                     android:layout_width="wrap_content"

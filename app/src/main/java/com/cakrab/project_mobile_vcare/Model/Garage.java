@@ -4,12 +4,10 @@ import com.google.firebase.firestore.Exclude;
 
 public class Garage {
 
-    // getter method for our id
     public String getId() {
         return id;
     }
 
-    // setter method for our id
     public void setId(String id) {
         this.id = id;
     }

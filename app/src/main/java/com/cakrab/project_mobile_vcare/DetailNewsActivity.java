@@ -28,8 +28,7 @@ public class DetailNewsActivity extends AppCompatActivity {
 
         textName = findViewById(R.id.text_content_name);
         textDesc = findViewById(R.id.text_content_desc);
-        textDate = findViewById(R.id.text_content_date);
-        imageNews = findViewById(R.id.image_content);
+        imageNews = findViewById(R.id.image_news);
         buttonEdit = findViewById(R.id.button_edit);
 
         Intent getNews = getIntent();
@@ -53,15 +52,15 @@ public class DetailNewsActivity extends AppCompatActivity {
         if (getData.equals("admin@gmail.com")) {
             buttonEdit.setVisibility(View.VISIBLE);
 
-        } else {            buttonEdit.setOnClickListener(view -> {
-            Intent i = new Intent(this, EditNewsActivity.class);
-            i.putExtra("ID", getNewsId);
-            i.putExtra("NAME", getNewsName);
-            i.putExtra("DESC", getNewsDesc);
-            i.putExtra("IMAGE", getNewsImage);
-            startActivity(i);
-        });
-
+            buttonEdit.setOnClickListener(view -> {
+                Intent i = new Intent(this, EditNewsActivity.class);
+                i.putExtra("ID", getNewsId);
+                i.putExtra("NAME", getNewsName);
+                i.putExtra("DESC", getNewsDesc);
+                i.putExtra("IMAGE", getNewsImage);
+                startActivity(i);
+            });
+        } else {
             buttonEdit.setVisibility(View.INVISIBLE);
         }
     }
