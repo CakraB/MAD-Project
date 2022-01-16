@@ -50,7 +50,7 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/poppinsreguler"
                 android:text="Get the latest automotif news"
-                android:textColor="@color/custom_gray"
+                android:textColor="@color/custom_black"
                 android:textSize="16sp"
                 android:textStyle="italic" />
 
@@ -79,7 +79,7 @@
                 android:id="@+id/button_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/custom_gray"
+                android:backgroundTint="@color/custom_white"
                 android:text="Log out"
                 android:textColor="@color/custom_black" />
 
